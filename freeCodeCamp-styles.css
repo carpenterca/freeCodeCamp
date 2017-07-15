@@ -1,9 +1,26 @@
 /* Cory Carpenter's css for freeCodeCamp portfolio page */
 
-.left-header {
+body {
+  background-color: #f0f0ff;
+}
+
+.left-wrapper {
   position: fixed;
   margin-left: 20%;
   margin-top: 2%;
+  padding-right: 1%;
+  padding-left: 1%;
+  border-right-color: #00b3b3;
+  border-right-style: solid;
+  border-right-width: thick;
+  border-radius: 3%;
+  border-bottom-left-radius: 2%;
+  border-bottom-right-radius: 3%;
+  box-shadow: 5px 5px 5px 1px #888888; /* h-shadow, v-shadow, blur, shade, color */
+}
+
+.page-creator {
+  margin-top: 180%;
 }
 
 .right-header {
@@ -11,16 +28,18 @@
   float: right;
 }
 
-.page-summary {
+.summary-text {
   padding-right: 50%;
+}
+
+.contact-info {
+  margin-bottom: -0.5%;
+}
+
+.license {
+  padding-top: 4%;
 }
 
 li {
   padding-bottom: 3px;
-}
-
-footer {
-  position: fixed;
-  margin-left: 20%;
-  margin-top: 40%;
 }
