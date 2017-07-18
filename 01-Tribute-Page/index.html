@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>carpenterca tribute page</title>
+  <title>Day[9] Tribute</title>
   <meta name="author" content="Cory Carpenter">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -11,12 +11,95 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <!-- Personal CSS -->
   <link rel="stylesheet" href="./tribute-styles.css" type="text/css">
+
+  <!-- Script to scroll to navbar page sections -->
+  <script src="./jquery-3.2.1.js"></script>
+  <script>
+    jQuery(document).ready(function($) {
+      $('a[href^="#"]').on('click', function(event) {
+        var target = $(this.getAttribute('href'));
+
+        if( target.length ) {
+          event.preventDefault();
+          $('html, body').stop().animate({
+            scrollTop: target.offset().top
+          }, 1000);
+        }
+      });
+    });
+  </script>
+  
 </head>
 
 <body>
   <div class="container-fluid">
 
-    <h1>Tribute Page</h1>
+    <div class="navbar">
+      <a class="day9logo" href="#home"><img class="day9logoimg" src="./day9_logo.png" alt="Day[9] Logo"></a>
+
+      <div id="nav" class="navbar-inner">
+        <ul>
+          <li><a href="#home" class="smooth">HOME</a></li>
+          <li><a href="#starcraft" class="smooth">STARCRAFT</a></li>
+          <li><a href="#day9TV">DAY[9]TV</a></li>
+          <li><a href="#cards">CARDS</a></li>
+          <li><a href="#desgin">DESIGN</a></li>
+        </ul>
+      </div>
+    </div>
+
+
+    <div id="homepage">
+      <a id="home" class="smooth"></a>
+
+      <img class="day9profile-img" src="./sean_plott_profile.png" alt="Sean Day[9] Plott Profile">
+
+      <p id="summary-1" class="summary-text">Sean "Day[9]" Plott is leader of the Starcraft community and a pioneer as an internet personality having created a highly friendly and interactive streaming community known as the Day Knights.
+        He is known for his competitive Starcraft Broodwar play, but more importantly for teaching others skills and strategy based on analyzing professional gameplay.</p>
+      <p id="summary-2" class="summary-text">Sean is known to burst into fits of laughter on stream, and go into constructive tangents about life and dating many girls by the name of Felicity before and during streams.
+        He loves playing horror games, much to the enjoyment of the community, as the calm marvel at the construction of the game turns into paniced screams of fright.</p>
+      <p id="summary-3" class="summary-text">He graduated from Harvey Mudd College with a Bachelor's degree in Mathamtics, and went on to obtain his Masters degree in Interactive Media from USC Berkely in May 2011.
+        He uses his background in media and experience with game design to critique the games he plays on stream showing how best to create a pleasent gaming expereince.</p>
+
+      <p id="journeytext" class="summary-text">Take a journey of how we got here.</p>
+
+
+    </div>
+
+
+    <div id="starcraftpage">
+      <a id="starcraft" class="smooth"></a>
+
+        <h2 id="starcraft-broodwar" class="starcraft-title">Starcraft Brood War</h2>
+
+        <p class="summary-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+        <h2 id="starcraft-2" class="starcraft-title">Starcraft II: Wings of Liberty</h2>
+
+        <p class="summary-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+<!--
+    <div id="day9TVpage">
+      <a id="day9TV" class="smooth"></a>
+
+
+        Day[9]TV Page
+    </div>
+
+    <div id="cardspage">
+      <a id="cards" class="smooth"></a>
+
+
+        Cards Page
+    </div>
+
+    <div id="designpage">
+      <a id="desgin" class="smooth"></a>
+
+
+        Design Page
+    </div>
+  -->
 
   </div> <!--Container-->
 </body>
