@@ -2,11 +2,11 @@
 
 ## Cory Carpenter
 
-My collection of projects following the [freeCodeCamp](https://www.freecodecamp.com) curriculum. My host site (also work in progress) can be found at <https://carpenterca.github.io/freeCodeCamp/>.
+My collection of projects following the <a href="https://www.freecodecamp.org/" target="_blank">freeCodeCamp</a> curriculum. My personal host site can be found at <a href="https://carpenterca.github.io/freeCodeCamp/" target="_blank">carpenterca-freeCodeCamp</a>.
 
 ### Front-End Projects
 
-1. **[Tribute Page](https://carpenterca.github.io/freeCodeCamp/01-Tribute-Page/)** (In Progress)
+1. <a href="https://carpenterca.github.io/freeCodeCamp/01-Tribute-Page/" target="_blank">Tribute Page</a></strong> (In Progress)
 
 
 ### License
