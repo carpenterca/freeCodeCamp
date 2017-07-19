@@ -6,7 +6,7 @@
 
 body {
   background-color: #000000;
-  color: #62605D;
+  color: #d7d5ca;
 }
 
 .navbar {
@@ -16,6 +16,7 @@ body {
   top: 0;
   left: -1%;
   padding-bottom: 4.1%;
+  z-index: 1; /* Navbar above bootstrap divs */
 }
 
 .day9logo {
@@ -67,6 +68,10 @@ body {
     ul.navbar-inner li {float: none;}
 }
 
+.page-section {
+  padding-bottom: 4%;
+}
+
 .day9profile-img {
   max-width: 100%;
   height: auto;
@@ -96,6 +101,117 @@ body {
   padding-top: 6%;
 }
 
+/*.page-title {
+  padding: 4%;
+  color: var(--day9yellow);
+}*/
+
 .starcraft-title {
   padding: 8%;
+  padding-left: 15%;
+  padding-bottom: 2%;
+  /*color: #d7d5ca;*/
+  color: var(--day9yellow);
+}
+
+.starcraftbw-img {
+  max-width: 100%;
+  height: auto;
+  float: right;
+  padding: 8%;
+  padding-top: 0;
+}
+
+.starcraft2-img {
+  max-width: 100%;
+  height: auto;
+  float: right;
+  padding: 8%;
+  padding-top: 0;
+}
+
+.day9daily-title {
+  padding: 6%;
+  padding-bottom: 0;
+  text-align: center;
+  color: var(--day9yellow);
+}
+
+.day9daily-titlesub {
+  text-align: center;
+  color: #d7d5ca;
+}
+
+.daily-text {
+  text-align: center;
+  padding-left: 30%;
+  padding-right: 30%;
+}
+
+.youtube-vid {
+  padding: 10% 2% 2% 2%;
+}
+
+/*.vid-text {
+  padding-bottom: 10%;
+}*/
+
+.mtg-title {
+  color: var(--day9yellow);
+  float:right;
+  padding: 20% 5% 5% 5%;
+}
+
+.hearthstone-title {
+  color: var(--day9yellow);
+  float: right;
+  padding: 20% 20% 5% 15%;
+}
+
+.mtgcard-img {
+  max-width: 100%;
+  height: auto;
+  float: left;
+  margin: 10px 20px 10px 30px;
+  padding-top: 20%;
+}
+
+.hearthstonecard-img {
+  max-width: 100%;
+  height: auto;
+  float: left;
+  padding-top: 16%;
+  padding-bottom: 25%;
+}
+
+.magic-text {
+  padding: 0;
+}
+
+.hearthstone-text {
+  padding: 0;
+}
+
+.artillerygames-title {
+  text-align: center;
+  padding: 4%;
+  padding-bottom: 2%;
+  color: var(--day9yellow);
+}
+
+.artillerygames-img {
+  display: block;
+  margin: 0 auto;
+  padding: 2%;
+}
+
+.artillergames-text {
+  text-align: center;
+  padding-left: 30%;
+  padding-right: 30%;
+}
+
+#social-media-page {
+  padding-top: 6%;
+  text-align: center;
 }

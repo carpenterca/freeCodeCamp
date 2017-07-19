@@ -12,8 +12,8 @@
   <!-- Personal CSS -->
   <link rel="stylesheet" href="./tribute-styles.css" type="text/css">
 
-  <!-- Script to scroll to navbar page sections -->
-  <script src="./jquery-3.2.1.js"></script>
+  <!-- Script to smoothly scroll to navbar page sections -->
+  <script src="./jquery-3.2.1.min.js"></script>
   <script>
     jQuery(document).ready(function($) {
       $('a[href^="#"]').on('click', function(event) {
@@ -28,14 +28,14 @@
       });
     });
   </script>
-  
+
 </head>
 
 <body>
   <div class="container-fluid">
 
     <div class="navbar">
-      <a class="day9logo" href="#home"><img class="day9logoimg" src="./day9_logo.png" alt="Day[9] Logo"></a>
+      <a class="day9logo" href="#home"><img class="day9logoimg" src="./img/day9_logo.png" alt="Day[9] Logo"></a>
 
       <div id="nav" class="navbar-inner">
         <ul>
@@ -44,62 +44,118 @@
           <li><a href="#day9TV">DAY[9]TV</a></li>
           <li><a href="#cards">CARDS</a></li>
           <li><a href="#desgin">DESIGN</a></li>
+          <!--<li><a href="javascript:void(0);" class="icon" onclick="navFunction()">&#9776;</a></li> --> <!-- Testing some mobile stuff -->
         </ul>
       </div>
     </div>
 
 
-    <div id="homepage">
+    <div id="homepage" class="page-section">
       <a id="home" class="smooth"></a>
 
-      <img class="day9profile-img" src="./sean_plott_profile.png" alt="Sean Day[9] Plott Profile">
+      <img class="day9profile-img" src="./img/sean_plott_profile.png" alt="Sean Day[9] Plott Profile">
 
       <p id="summary-1" class="summary-text">Sean "Day[9]" Plott is leader of the Starcraft community and a pioneer as an internet personality having created a highly friendly and interactive streaming community known as the Day Knights.
         He is known for his competitive Starcraft Broodwar play, but more importantly for teaching others skills and strategy based on analyzing professional gameplay.</p>
       <p id="summary-2" class="summary-text">Sean is known to burst into fits of laughter on stream, and go into constructive tangents about life and dating many girls by the name of Felicity before and during streams.
         He loves playing horror games, much to the enjoyment of the community, as the calm marvel at the construction of the game turns into paniced screams of fright.</p>
-      <p id="summary-3" class="summary-text">He graduated from Harvey Mudd College with a Bachelor's degree in Mathamtics, and went on to obtain his Masters degree in Interactive Media from USC Berkely in May 2011.
+      <p id="summary-3" class="summary-text">He graduated from Harvey Mudd College with a Bachelor's degree in Mathematics, and went on to obtain his Masters degree in Interactive Media from USC Berkely in May 2011.
         He uses his background in media and experience with game design to critique the games he plays on stream showing how best to create a pleasent gaming expereince.</p>
 
-      <p id="journeytext" class="summary-text">Take a journey of how we got here.</p>
+      <p id="journeytext" class="summary-text" style="color:#ffa71a;">Take a journey of how he got here.</p>
 
 
     </div>
 
 
-    <div id="starcraftpage">
+    <div id="starcraftpage" class="page-section">
       <a id="starcraft" class="smooth"></a>
 
-        <h2 id="starcraft-broodwar" class="starcraft-title">Starcraft Brood War</h2>
+        <h2 id="starcraft-broodwar" class="starcraft-title">Starcraft: Brood War</h2>
+        <img class="starcraftbw-img" src="./img/starcraft_brood_war_logo.png" alt="Starcraft Brood War Logo">
 
         <p class="summary-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
         <h2 id="starcraft-2" class="starcraft-title">Starcraft II: Wings of Liberty</h2>
+        <img class="starcraft2-img" src="./img/starcraft2_logo.png" alt="Starcraft 2 Wings of Liberty Logo">
 
         <p class="summary-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
     </div>
-<!--
-    <div id="day9TVpage">
+
+
+    <div id="day9TVpage" class="page-section">
       <a id="day9TV" class="smooth"></a>
 
+      <h2 id="day9daily" class="day9daily-title">Day[9]TV</h2>
+      <h4 id="day9daily-sub" class="day9daily-titlesub">Be A Better Gamer</h4>
 
-        Day[9]TV Page
+      <p class="summary-text daily-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+      <div class="row">
+        <div class="col-md-6">
+          <iframe class="youtube-vid" src="https://www.youtube.com/embed/NJztfsXKcPQ" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+          <p class="summary-text vid-text">Day[9] Daily #100</p>
+        </div>
+        <div class="col-md-6">
+          <iframe class="youtube-vid vid-text" src="https://www.youtube.com/embed/9-9VLVkm8R4" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+          <p class="summary-text">Day[9] Daily #400</p>
+        </div>
+      </div>
+
     </div>
 
-    <div id="cardspage">
+
+    <div id="cardspage" class="page-section">
       <a id="cards" class="smooth"></a>
 
+      <div class="row">
+        <div class="col-md-6">
 
-        Cards Page
+          <h2 id="mtg" class="mtg-title">Magic: The Gathering</h2>
+          <img class="mtgcard-img" src="./img/day9_mtg.png" alt="Day[9] MTG card in immortal pose">
+          <p class="summary-text magic-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+
+        <div class="col-md-6">
+          <h2 id="hearthstone" class="hearthstone-title">Hearthstone</h2>
+          <img class="hearthstonecard-img" src="./img/day9_hearthstone.png" alt="Day[9] hearthstone card">
+          <p class="summary-text hearthstone-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+      </div>
+
     </div>
 
-    <div id="designpage">
+
+    <div id="designpage" class="page-section">
       <a id="desgin" class="smooth"></a>
 
+      <h2 id="artillerygames" class="artillerygames-title">Game Design at Artillery Games</h2>
 
-        Design Page
+      <img class="artillerygames-img" src="./img/artillery_games_logo.png" alt="Artillery Games Logo">
+
+      <p class="summary-text artillergames-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+      <!--<iframe class="youtube-vid" src="https://www.youtube.com/embed/NiCy5igO9-I" width="560" height="315" frameborder="0" allowfullscreen></iframe>-->
     </div>
-  -->
+
+
+    <div id="social-media-page" class="page-section">
+      <a id="social-media" class="smooth"></a>
+
+      <div class="row">
+        <div class="col-md-6">
+          <p class="summary-text">Website</p>
+          <p class="summary-text">Twitch</p>
+          <p class="summary-text">Twitter</p>
+        </div>
+        <div class="col-md-6">
+          <p class="summary-text">[9]</p>
+        </div>
+      </div>
+
+      <p class="summary-text"> Website created by <strong><a href="https://github.com/carpenterca" target="_blank">Cory Carpenter</a></strong> Copyright 2017 </p>
+
+    </div>
 
   </div> <!--Container-->
 </body>
