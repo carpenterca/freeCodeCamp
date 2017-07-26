@@ -5,12 +5,12 @@
   <meta charset="utf-8">
   <title>Day[9] Tribute</title>
   <meta name="author" content="Cory Carpenter">
+  <meta name="description" content="A site dedicated to showcasing Sean 'Day[9]' Plott's acomplishments, personality, and community.">
+  <meta name="keywords" content="Day[9],Sean Plott,Be a better gamer,Starcraft,DayKnight">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <!-- Personal CSS -->
-  <link rel="stylesheet" href="./tribute-styles.css" type="text/css">
+  <link rel="icon" href="./img/day9.ico" type="image/x-icon">
+  <link rel="stylesheet" href="./day9_styles.css" type="text/css">
 
   <!-- Script to smoothly scroll to navbar page sections -->
   <script src="./jquery-3.2.1.min.js"></script>
@@ -28,136 +28,150 @@
       });
     });
   </script>
-
 </head>
 
 <body>
-  <div class="container-fluid">
 
-    <div class="navbar">
-      <a class="day9logo" href="#home"><img class="day9logoimg" src="./img/day9_logo.png" alt="Day[9] Logo"></a>
-
-      <div id="nav" class="navbar-inner">
-        <ul>
-          <li><a href="#home" class="smooth">HOME</a></li>
-          <li><a href="#starcraft" class="smooth">STARCRAFT</a></li>
-          <li><a href="#day9TV">DAY[9]TV</a></li>
-          <li><a href="#cards">CARDS</a></li>
-          <li><a href="#desgin">DESIGN</a></li>
-          <!--<li><a href="javascript:void(0);" class="icon" onclick="navFunction()">&#9776;</a></li> --> <!-- Testing some mobile stuff -->
-        </ul>
+    <header>
+      <div class="container">
+        <div id="logo">
+          <a href="#home"><img id="day9logoimg" src="./img/day9_logo.jpg" alt="Day[9] Logo: Be A Better Gamer"></a>
+        </div>
+        <nav>
+          <ul>
+            <!--<li class="icon"><a href="javascript:void(0);" onclick="navFunction()">&#9776;</a></li>-->
+            <li class="full"><a href="#home">HOME</a></li>
+            <li class="full"><a href="#starcraft">STARCRAFT</a></li>
+            <li class="full"><a href="#day9TV">DAY[9]TV</a></li>
+            <li class="full"><a href="#cards">CARDS</a></li>
+            <li class="full"><a href="#desgin">DESIGN</a></li>
+          </ul>
+        </nav>
       </div>
-    </div>
+    </header>
 
+    <section id="homepage" class="page-section">
+      <!--<a id="home" class="smooth"></a>-->
 
-    <div id="homepage" class="page-section">
-      <a id="home" class="smooth"></a>
+      <div class="container">
 
-      <img class="day9profile-img" src="./img/sean_plott_profile.png" alt="Sean Day[9] Plott Profile">
+        <img id="day9profile-img" src="./img/sean_plott_profile.jpg" alt="Sean Day[9] Plott wearing a Day9 Yellow shirt with his logo underneath a brown starcraft jacket">
 
-      <p id="summary-1" class="summary-text">Sean "Day[9]" Plott is leader of the Starcraft community and a pioneer as an internet personality having created a highly friendly and interactive streaming community known as the Day Knights.
-        He is known for his competitive Starcraft Broodwar play, but more importantly for teaching others skills and strategy based on analyzing professional gameplay.</p>
-      <p id="summary-2" class="summary-text">Sean is known to burst into fits of laughter on stream, and go into constructive tangents about life and dating many girls by the name of Felicity before and during streams.
+        <p class="summary-text"><a id="home" class="smooth">Sean "Day[9]" Plott is leader of the Starcraft community and a pioneer as an internet personality having created a highly friendly and interactive streaming community known as the Day Knights.
+        He is known for his competitive Starcraft Broodwar play, but more importantly for teaching others skills and strategy based on analyzing professional gameplay.</a></p>
+        <p class="summary-text">Sean is known to burst into fits of laughter on stream, and go into constructive tangents about life and dating many girls by the name of Felicity before and during streams.
         He loves playing horror games, much to the enjoyment of the community, as the calm marvel at the construction of the game turns into paniced screams of fright.</p>
-      <p id="summary-3" class="summary-text">He graduated from Harvey Mudd College with a Bachelor's degree in Mathematics, and went on to obtain his Masters degree in Interactive Media from USC Berkely in May 2011.
+        <p class="summary-text">He graduated from Harvey Mudd College with a Bachelor's degree in Mathematics, and went on to obtain his Masters degree in Interactive Media from USC Berkely in May 2011.
         He uses his background in media and experience with game design to critique the games he plays on stream showing how best to create a pleasent gaming expereince.</p>
 
-      <p id="journeytext" class="summary-text" style="color:#ffa71a;">Take a journey of how he got here.</p>
+        <p id="journeytext">Take a journey of how he got here.</p>
+
+      </div>
+    </section>
 
 
-    </div>
+    <section id="starcraftpage" class="page-section">
+      <!--<a id="starcraft" class="smooth"></a>-->
 
+      <div class="container">
 
-    <div id="starcraftpage" class="page-section">
-      <a id="starcraft" class="smooth"></a>
+        <h1 id="starcraft-broodwar" class="starcraft-title"><a id="starcraft" class="smooth">Starcraft: Brood War</a></h2>
+        <img class="starcraftbw-img" src="./img/starcraft_brood_war_logo.jpg" alt="Starcraft Brood War Logo">
+        <p class="summary-text">Sean has enjoyed Starcraft since his childhood playing alongside his brother Nick "Tasteless" Plott. He started to play competitvely as the Zerg joining several tournaments and placing 12th in the 2004 World Cyber Games. He went on to place 1st in 2005 followed by 3rd in 2006.
+          In 2009, after his competive play and while still in college, he started a series in which he analyzed high level players: NaDa, Flash, Jaedong, and BoxeR, and broke it down into important concepts for average players to improve their skills.</p>
 
-        <h2 id="starcraft-broodwar" class="starcraft-title">Starcraft: Brood War</h2>
-        <img class="starcraftbw-img" src="./img/starcraft_brood_war_logo.png" alt="Starcraft Brood War Logo">
-
-        <p class="summary-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-        <h2 id="starcraft-2" class="starcraft-title">Starcraft II: Wings of Liberty</h2>
+        <h1 id="starcraft-2" class="starcraft-title">Starcraft II: Wings of Liberty</h2>
         <img class="starcraft2-img" src="./img/starcraft2_logo.png" alt="Starcraft 2 Wings of Liberty Logo">
+        <p class="summary-text">With the release of Starcraft 2 in 2010 Sean was excited to continue his series experimenting with new units and strategies, and how professional players would creatively use them.
+          The awaited release of Starcraft 2 revived the Starcraft community in the West, and Sean shifted focus from competative play to casting tournaments popping up all over the USA such as MLG, DreamHack, and the North American Star League.
+          Sean still has a place in his heart for Broodwar, and plans to continue his dailies when Starcraft Remastered comes out this summer. </p>
 
-        <p class="summary-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    </div>
+        </div>
+    </section>
 
 
-    <div id="day9TVpage" class="page-section">
-      <a id="day9TV" class="smooth"></a>
+    <section id="day9TVpage" class="page-section">
+      <!--<a id="day9TV" class="smooth"></a>-->
 
-      <h2 id="day9daily" class="day9daily-title">Day[9]TV</h2>
-      <h4 id="day9daily-sub" class="day9daily-titlesub">Be A Better Gamer</h4>
+      <div class="container">
 
-      <p class="summary-text daily-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <h1 id="day9daily" class="day9daily-title"><a id="day9TV" class="smooth">Day[9]TV</a></h2>
+        <h2 id="day9daily-sub" class="day9daily-titlesub">Be A Better Gamer</h4>
 
-      <div class="row">
-        <div class="col-md-6">
+        <p class="summary-text daily-text">Sean started Day[9]TV in 2009 while working on his Masters providing both a stress outlet and a stressor. He started by watching replays from professional players and analyzing the strategies and errors they made. Usually, a show would focus on one race and strategy being used within three main replays shown throughout the show seperated into three parts.
+      Sean added additional shows throughout the week such as Funday Monday and Newbie Tuesday, where more basic and beginner optimizations were the focus. Funday Monday would go on to become one of his most anticipated shows and an enjoyable start of the work week. The goal was players are constrained by particular rules that usually affects them negatively such as never attacking, only using drops, or Nukes and Seuss in which players has to use nukes whenever they could and announce it with a Dr. Seuss style rhyme. It spawned the saying "Day[9] made me do it" at the end of a match. As the community grew Sean gave them the name DayKnights.</p>
+
+        <p class="summary-text">In 2013 with constantly reviewing game replays and preparing for shows, and a backlog of games piling up, Sean went on to establish Day[9]'s Day Off on Fridays where he would stream any game of his chosing, and often critique the game's design and mechanics with what the developers did correctly.
+      Currently he is focusing on improving his DOTA 2 skills, and streaming practice sessions with a coach.</p>
+
+        <div class="youtube">
           <iframe class="youtube-vid" src="https://www.youtube.com/embed/NJztfsXKcPQ" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+          <iframe class="youtube-vid2" src="https://www.youtube.com/embed/9-9VLVkm8R4" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="video-text">
           <p class="summary-text vid-text">Day[9] Daily #100</p>
+          <p class="summary-text vid-text">Day[9] Daily #400</p>
         </div>
-        <div class="col-md-6">
-          <iframe class="youtube-vid vid-text" src="https://www.youtube.com/embed/9-9VLVkm8R4" width="560" height="315" frameborder="0" allowfullscreen></iframe>
-          <p class="summary-text">Day[9] Daily #400</p>
-        </div>
+
       </div>
+    </section>
 
-    </div>
 
+    <section id="cardspage" class="page-section">
+      <!--<a id="cards" class="smooth"></a>-->
 
-    <div id="cardspage" class="page-section">
-      <a id="cards" class="smooth"></a>
+      <div class="container">
 
-      <div class="row">
-        <div class="col-md-6">
-
-          <h2 id="mtg" class="mtg-title">Magic: The Gathering</h2>
+        <div class="box">
+          <h1 id="mtg" class="mtg-title"><a id="cards" class="smooth">Magic: The Gathering</a></h2>
           <img class="mtgcard-img" src="./img/day9_mtg.png" alt="Day[9] MTG card in immortal pose">
-          <p class="summary-text magic-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p class="summary-text magic-text">Sean is a big fan of card games. He would sometimes talk about Magic the Gathering tournaments or Prereleases he attended and excitedly tell stories from them during the intro to his dailies.
+            He hosted a show with Geek & Sundry called Spellslinger where using the latest cards one of their members challenges Sean to see who would emerge the winner while learning skills and tips to use in MTG.</p>
         </div>
 
-        <div class="col-md-6">
-          <h2 id="hearthstone" class="hearthstone-title">Hearthstone</h2>
+        <div class="box">
+          <h1 id="hearthstone" class="hearthstone-title">Hearthstone</h2>
           <img class="hearthstonecard-img" src="./img/day9_hearthstone.png" alt="Day[9] hearthstone card">
-          <p class="summary-text hearthstone-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p class="summary-text hearthstone-text">His interest in Magic and Blizzard games made it an easy choice to pick up playing Hearthstone in 2014. The gameplay allowed for serious grinding to get to Legend rank, but also the familiar enjoyment of Funday Mondays with fun decks built around some interesting or potentially impractical mechanic.
+          It's especially hilarious to see him get lucky with his OTK Duplicate Mage summoning a bunch of molten giants on the field and the laughter that ensues as the opponent is unsure of what to do in repsonse.</p>
         </div>
+
       </div>
+    </section>
 
-    </div>
 
+    <section id="designpage" class="page-section">
+      <!--<a id="desgin" class="smooth"></a>-->
 
-    <div id="designpage" class="page-section">
-      <a id="desgin" class="smooth"></a>
+      <div class="container">
 
-      <h2 id="artillerygames" class="artillerygames-title">Game Design at Artillery Games</h2>
-
-      <img class="artillerygames-img" src="./img/artillery_games_logo.png" alt="Artillery Games Logo">
-
-      <p class="summary-text artillergames-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <h1 id="artillerygames" class="artillerygames-title"><a id="desgin" class="smooth">Game Design at Artillery Games</a></h2>
+        <img class="artillerygames-img" src="./img/Atlas_Gameplay.jpg" alt="Project Atlas RTS Battle Screenshot">
+        <p class="summary-text artillergames-text">Sean announced he was working at Artillery Games in 2013 as a game designer of Project Atlas later named Guardians of Atlas. This real-time multiplayer strategy game was one that they were developing to be played through web browsers which is an impressive feat.
+      Sean would often bring up his expereince working on Atlas when discusing game design or particualr game developer's decesions made in the games he played on stream. However, shortly after the release of it's alpha version in 2016 the company closed down and Project Atlas ended.</p>
 
       <!--<iframe class="youtube-vid" src="https://www.youtube.com/embed/NiCy5igO9-I" width="560" height="315" frameborder="0" allowfullscreen></iframe>-->
-    </div>
+
+      </div>
+    </section>
 
 
-    <div id="social-media-page" class="page-section">
-      <a id="social-media" class="smooth"></a>
+    <footer id="social-media-page" class="page-section">
+      <!--<a id="social-media" class="smooth"></a>-->
 
-      <div class="row">
-        <div class="col-md-6">
-          <p class="summary-text">Website</p>
-          <p class="summary-text">Twitch</p>
-          <p class="summary-text">Twitter</p>
-        </div>
-        <div class="col-md-6">
-          <p class="summary-text">[9]</p>
+      <div class="container">
+
+        <ul class="social">
+          <li><a href="https://day9.tv/" target="_blank"> Day[9]'s Website</a></li>
+          <li><a href="https://www.twitch.tv/day9tv" target="_blank"> Day[9]'s Twitch</a></li>
+          <li><a href="https://twitter.com/day9tv" target="_blank"> Day[9]'s Twitter</a></li>
+        </ul>
+
+        <div class="credits">
+          <p> Website created by <strong><a href="https://github.com/carpenterca" target="_blank">Cory Carpenter</a></strong> &copy; Copyright 2017 </p>
         </div>
       </div>
+    </footer>
 
-      <p class="summary-text"> Website created by <strong><a href="https://github.com/carpenterca" target="_blank">Cory Carpenter</a></strong> Copyright 2017 </p>
-
-    </div>
-
-  </div> <!--Container-->
 </body>
-
 </html>
