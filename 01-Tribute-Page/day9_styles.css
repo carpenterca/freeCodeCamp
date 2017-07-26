@@ -22,8 +22,18 @@ body {
   overflow: hidden;
 }
 
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* Scroll anchor tag locations */
 .smooth {
   padding-top: 100px;
+}
+
+#homepage .smooth {
+  padding-top: 150px;
 }
 
 #starcraftpage .smooth {
@@ -32,11 +42,6 @@ body {
 
 #cardspage .smooth {
   padding-top: 200px;
-}
-
-ul {
-  margin: 0;
-  padding: 0;
 }
 
 
@@ -58,6 +63,11 @@ header a {
   font-family: verdana;
   text-transform: uppercase;
   font-size: 16px;
+}
+
+header a.underline {
+  border-bottom: var(--day9yellow) 1px solid;
+  padding-bottom: 3px;
 }
 
 header li {
@@ -89,7 +99,7 @@ header a:hover {
 
 #homepage img {
   float: right;
-
+  margin-right: 80px; /* good for larger screens, but not smaller */
 }
 
 #homepage p {
@@ -105,7 +115,7 @@ header a:hover {
 
 /* Starcraft Page */
 #starcraftpage {
-  margin-top: 300px;
+  margin-top: 250px;
 }
 
 #starcraftpage h1 {
@@ -120,6 +130,7 @@ header a:hover {
 #starcraftpage img {
   float: right;
   margin-top: 10px;
+  margin-right: 40px;
   margin-bottom: 10px;
   padding: 5px;
 }
@@ -190,12 +201,12 @@ header a:hover {
   margin-top: 30px;
   margin-bottom: 10px;
   margin-right: 10px;
-  /*width: 25%;*/
+  text-align: center;
 }
 
-#cardspage .hearthstone-title {
+/*#cardspage .hearthstone-title {
   margin-right: 2.5em;
-}
+}*/
 
 #cardspage img {
   float: left;
@@ -239,12 +250,13 @@ header a:hover {
   display: block;
   margin: 0 auto;
   margin-top: 30px;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 
 #designpage p {
   color: #d7d5ca;
   text-align: center;
+  margin-bottom: 30px;
 }
 
 
@@ -282,3 +294,6 @@ footer .credits a {
 footer .credits a:hover {
   color: var(--day9yellow);
 }
+
+
+/* Media Queries */
