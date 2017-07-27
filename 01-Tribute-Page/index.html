@@ -11,6 +11,7 @@
 
   <link rel="icon" href="./img/day9.ico" type="image/x-icon">
   <link rel="stylesheet" href="./day9_styles.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <!-- Script to smoothly scroll to navbar page sections -->
   <script src="./jquery-3.2.1.min.js"></script>
@@ -18,6 +19,9 @@
     jQuery(document).ready(function($) {
       $('a[href^="#"]').on('click', function(event) {
         var target = $(this.getAttribute('href'));
+
+        /*$("nav a").css('border-bottom', 'none')
+        $(this).css('border-bottom', '#ffa71a 1px solid')*/
 
         if( target.length ) {
           event.preventDefault();
@@ -37,8 +41,8 @@
         <div id="logo">
           <a href="#home"><img id="day9logoimg" src="./img/day9_logo.jpg" alt="Day[9] Logo: Be A Better Gamer"></a>
         </div>
-        <nav>
-          <ul>
+        <nav id="nav-anchor">
+          <ul class="navHighlighter">
             <!--<li class="icon"><a href="javascript:void(0);" onclick="navFunction()">&#9776;</a></li>-->
             <li><a class="underline" href="#home">HOME</a></li>
             <li><a class="underline" href="#starcraft">STARCRAFT</a></li>
@@ -133,7 +137,11 @@
           <h1 id="hearthstone" class="hearthstone-title">Hearthstone</h2>
           <img class="hearthstonecard-img" src="./img/day9_hearthstone.png" alt="Day[9] hearthstone card">
           <p class="summary-text hearthstone-text">His interest in Magic and Blizzard games made it an easy choice to pick up playing Hearthstone in 2014. The gameplay allowed for serious grinding to get to Legend rank, but also the familiar enjoyment of Funday Mondays with fun decks built around some interesting or potentially impractical mechanic.
-          It's especially hilarious to see him get lucky with his OTK Duplicate Mage summoning a bunch of molten giants on the field and the laughter that ensues as the opponent is unsure of what to do in repsonse.</p>
+          It's especially hilarious to see him get lucky with his Echo Control Mage summoning a bunch of molten giants on the field and the laughter that ensues as the opponent is unsure of what to do in repsonse.</p>
+        </div>
+
+        <div class="button-wrapper">
+          <a class="button" href="https://www.youtube.com/watch?v=wl1UPs-0eh8" target="_blank">Watch the best Day[9] Hearthstone Moments</a>
         </div>
 
       </div>
@@ -162,9 +170,11 @@
       <div class="container">
 
         <ul class="social">
-          <li><a href="https://day9.tv/" target="_blank"> Day[9]'s Website</a></li>
-          <li><a href="https://www.twitch.tv/day9tv" target="_blank"> Day[9]'s Twitch</a></li>
-          <li><a href="https://twitter.com/day9tv" target="_blank"> Day[9]'s Twitter</a></li>
+          <li>Find Day[9] here:</li>
+          <li><a class="fa fa-desktop" href="https://day9.tv/" target="_blank"> Website</a></li>
+          <li><a class="fa fa-twitch" href="https://www.twitch.tv/day9tv" target="_blank"> Twitch</a></li>
+          <li><a class="fa fa-youtube" href="https://www.youtube.com/user/day9tv" target="_blank"> YouTube</a></li>
+          <li><a class="fa fa-twitter" href="https://twitter.com/day9tv" target="_blank"> Twitter</a></li>
         </ul>
 
         <div class="credits">

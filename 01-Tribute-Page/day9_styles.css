@@ -27,6 +27,30 @@ ul {
   padding: 0;
 }
 
+iframe {
+  border: 1px solid var(--day9yellow);
+}
+
+.button {
+  background-color: var(--day9yellow);
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 40px auto 0;
+  margin-left:30%;
+  margin-right:30%;
+  cursor: pointer;
+}
+
+.button:hover {
+    background-color: #cc7e00;
+}
+
+
 /* Scroll anchor tag locations */
 .smooth {
   padding-top: 100px;
@@ -104,7 +128,7 @@ header a:hover {
 
 #homepage p {
   float: left;
-  width: 60%
+  width: 60%;
 }
 
 #homepage #journeytext {
@@ -121,7 +145,7 @@ header a:hover {
 #starcraftpage h1 {
   float: left;
   color: var(--day9yellow);
-  font-size: 26px;
+  font-size: 32px;
   margin-top: 30px;
   margin-bottom: 20px;
   width: 100%;
@@ -130,7 +154,7 @@ header a:hover {
 #starcraftpage img {
   float: right;
   margin-top: 10px;
-  margin-right: 40px;
+  margin-right: 80px;
   margin-bottom: 10px;
   padding: 5px;
 }
@@ -154,7 +178,7 @@ header a:hover {
 }
 
 #day9TVpage h1 {
-  font-size: 26px;
+  font-size: 32px;
   margin-top: 20px;
   margin-bottom: 0px;
 }
@@ -173,10 +197,7 @@ header a:hover {
   margin-top: 40px;
   margin-right: 5em;
   width: 45%;
-}
-
-#day9TVpage iframe:last-child {
-  margin-right: 0;
+  margin-left: 10px;
 }
 
 #day9TVpage .youtube-vid2 {
@@ -200,13 +221,17 @@ header a:hover {
   font-size: 22px;
   margin-top: 30px;
   margin-bottom: 10px;
-  margin-right: 10px;
+  /*margin-right: 10px;*/
   text-align: center;
 }
 
-/*#cardspage .hearthstone-title {
-  margin-right: 2.5em;
-}*/
+#cardspage .mtg-title {
+  margin-right: 1em;
+}
+
+#cardspage .hearthstone-title {
+  margin-right: 3em;
+}
 
 #cardspage img {
   float: left;
@@ -227,8 +252,8 @@ header a:hover {
 #cardspage .box {
   float: left;
   text-align: center;
-  width: 45%;
-  padding: 10px;
+  width: 50%;
+  /*padding: 10px;*/
 }
 
 
@@ -239,7 +264,7 @@ header a:hover {
 
 #designpage h1 {
   color: var(--day9yellow);
-  font-size: 26px;
+  font-size: 32px;
   text-align: center;
   width: 100%;
   margin-top: 30px;
