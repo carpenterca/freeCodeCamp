@@ -41,8 +41,8 @@ iframe {
   display: inline-block;
   font-size: 16px;
   margin: 40px auto 0;
-  margin-left:30%;
-  margin-right:30%;
+  margin-left:35%;
+  margin-right:25%;
   cursor: pointer;
 }
 
@@ -322,3 +322,29 @@ footer .credits a:hover {
 
 
 /* Media Queries */
+@media screen and (min-width:1750px) {
+  #starcraftpage {
+    margin-top: 300px;
+  }
+  #day9TVpage {
+    margin-top: 300px;
+  }
+  #designpage {
+    margin-top: 300px;
+    margin-bottom: 200px;
+  }
+
+  #cardspage .mtg-title {
+    margin-right: 2.5em;
+  }
+
+  #cardspage .hearthstone-title {
+    margin-right: 5em;
+  }
+
+  .button {
+    margin-left: 40%;
+    margin-right: 20%;
+    margin-top: 80px;
+  }
+}
