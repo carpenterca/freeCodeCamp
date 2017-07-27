@@ -8,7 +8,6 @@ body {
   font-family: verdana, Arial, Helvetica, sans-serif;
   font-size: 15px;
   line-height: 1.5;
-  /* font: 15px/1.5 Arial, Helvetica, sans-serif; */
   padding: 0;
   margin: 0;
   background-color: #000000;
@@ -79,6 +78,7 @@ header {
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 9999; /* Due to text transform */
 }
 
 header a {
@@ -123,7 +123,7 @@ header a:hover {
 
 #homepage img {
   float: right;
-  margin-right: 80px; /* good for larger screens, but not smaller */
+  margin-right: 80px;
 }
 
 #homepage p {
@@ -200,7 +200,7 @@ header a:hover {
   margin-left: 10px;
 }
 
-#day9TVpage .youtube-vid2 {
+#day9TVpage .youtube-final {
   margin-right: 0;
 }
 
@@ -221,15 +221,14 @@ header a:hover {
   font-size: 22px;
   margin-top: 30px;
   margin-bottom: 10px;
-  /*margin-right: 10px;*/
   text-align: center;
 }
 
-#cardspage .mtg-title {
+#cardspage #mtg-title {
   margin-right: 1em;
 }
 
-#cardspage .hearthstone-title {
+#cardspage #hearthstone-title {
   margin-right: 3em;
 }
 
@@ -248,12 +247,10 @@ header a:hover {
   color: #d7d5ca;
 }
 
-
 #cardspage .box {
   float: left;
   text-align: center;
   width: 50%;
-  /*padding: 10px;*/
 }
 
 
@@ -321,8 +318,9 @@ footer .credits a:hover {
 }
 
 
+
 /* Media Queries */
-@media screen and (min-width:1750px) {
+@media screen and (min-width: 1720px) {
   #starcraftpage {
     margin-top: 300px;
   }
@@ -331,20 +329,308 @@ footer .credits a:hover {
   }
   #designpage {
     margin-top: 300px;
-    margin-bottom: 200px;
+    margin-bottom: 150px;
   }
 
-  #cardspage .mtg-title {
+  #cardspage #mtg-title {
     margin-right: 2.5em;
   }
 
-  #cardspage .hearthstone-title {
+  #cardspage #hearthstone-title {
     margin-right: 5em;
   }
 
   .button {
-    margin-left: 40%;
+    margin-left: 38%;
+    margin-right: 22%;
+    margin-top: 60px;
+  }
+
+  .summary-text {
+    font-size: 19px;
+  }
+}
+
+
+@media screen and (max-width: 1356px) {
+  #homepage img {
+    margin-right: 30px;
+  }
+
+  #starcraftpage img {
+    margin-right: 30px;
+  }
+
+  #cardspage #mtg-title {
+    margin-right: 0;
+  }
+
+  .button {
+    margin-left: 30%;
     margin-right: 20%;
-    margin-top: 80px;
+  }
+}
+
+/* Change card page layout to stack each box */
+@media screen and (max-width: 1260px) {
+  #homepage img {
+    margin-right: 15px;
+  }
+
+  #starcraftpage img {
+    margin-right: 15px;
+  }
+
+  #day9TVpage iframe {
+    margin-right: 2em;
+    width: 45%;
+    margin-left: 10px;
+  }
+
+
+  #cardspage h1 {
+    float: none;
+    font-size: 32px;
+  }
+
+  #cardspage #mtg-title {
+    margin-right: 0;
+  }
+
+  #cardspage #hearthstone-title {
+    margin-right: 0;
+  }
+
+  #cardspage img {
+    float: left;
+    width: 35%;
+  }
+
+  #cardspage p {
+    float: right;
+    width: 55%;
+    text-align: left;
+    font-size: 18px;
+    margin-top: 20px;
+    -ms-transform: translateY(50%);
+    -webkit-transform: translateY(50%);
+    transform: translateY(50%);
+  }
+
+  #cardspage .box {
+    float: none;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    padding-bottom: 20px;
+    margin-bottom: 40px;
+  }
+
+  .button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+
+/* Change Day[9]TV page video to stack each vid */
+@media screen and (max-width: 1090px) {
+  #homepage img {
+    margin-right: 0;
+  }
+
+  #starcraftpage img {
+    margin-right: 0;
+  }
+
+  #day9TVpage p {
+    margin-bottom: 50px;
+  }
+
+  #day9TVpage iframe {
+    float: none;
+    display: block;
+    margin-top: 40px;
+    margin-right: 10%;
+    width: 80%;
+    margin-left: 10%;
+    margin-bottom: 90px;
+  }
+
+  #day9TVpage .youtube-final {
+    margin-bottom: 50;
+  }
+
+  #day9TVpage .vid-text {
+    float: none;
+    display: none;
+    width: 50%;
+  }
+
+  #cardspage p {
+    -ms-transform: translateY(30%);
+    -webkit-transform: translateY(30%);
+    transform: translateY(30%);
+  }
+}
+
+
+/* Change remaining page video to stack ontop */
+@media screen and (max-width: 1000px) {
+  #homepage {
+    margin-top: 100px;
+  }
+
+  #homepage .smooth {
+    padding-top: 600px;
+  }
+
+  #homepage img {
+    float: none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+  }
+
+  #homepage p {
+    float: none;
+    width: 100%;
+  }
+
+  #starcraftpage {
+    margin-top: 150px;
+  }
+
+  #starcraftpage h1 {
+    float: none;
+    width: 100%;
+    text-align: center;
+  }
+
+  #starcraftpage img {
+    float: none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #starcraftpage p {
+    float: none;
+    width: 100%;
+  }
+
+  #day9TVpage {
+    margin-top: 150px;
+  }
+
+  #cardspage {
+    margin-top: 150px;
+  }
+
+  #cardspage p {
+    -ms-transform: translateY(10%);
+    -webkit-transform: translateY(10%);
+    transform: translateY(10%);
+  }
+
+  .button {
+    margin-top: 20px;
+  }
+
+  #designpage {
+    margin-top: 150px;
+  }
+}
+
+
+/* Navbar change */
+@media screen and (max-width: 938px) {
+  /*header {
+    display: block;
+  }*/
+
+/* header not displaying correctly */
+  header #logo {
+    float: none;
+    max-width: 100%;
+    margin: 0 auto;
+    /*display: block;
+    margin-left: auto;
+    margin-right: auto;*/
+  }
+
+  header nav {
+    float: none;
+    /*display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;*/
+  }
+}
+
+/* image recenter and text transform gone button change */
+@media screen and (max-width: 860px) {
+  #day9TVpage iframe {
+    max-width: 100%;
+  }
+
+  #cardspage p {
+    -ms-transform: translateY(0);
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+/* card page image and text stacked blocks */
+@media screen and (max-width: 825px) {
+  #cardspage img {
+    float: none;
+    min-width: 50%;
+  }
+
+  #cardspage p {
+    float: none;
+    width: 100%;
+    text-align: center;
+  }
+
+  .button {
+    margin-top: 0px;
+  }
+}
+
+/* navbar change fully */
+@media screen and (max-width: 695px) {
+  header nav {
+    display: none;
+  }
+
+  #cardspage img {
+    width: 60%;
+  }
+
+  #designpage img {
+    max-width: 100%;
+  }
+
+  footer .social li {
+    display: block;
+    padding: 20px 20px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  #homepage #journeytext {
+    line-height: 2;
+  }
+
+  #starcraftpage img {
+    max-width: 100%;
+  }
+
+  #cardspage img {
+    max-width: 100%;
   }
 }
