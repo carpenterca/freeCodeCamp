@@ -9,6 +9,10 @@
   <meta name="keywords" content="Day[9],Sean Plott,Be a better gamer,Starcraft,DayKnight">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- Image Credits -->
+  <!-- Day[9] Hearthstone card image is by ZeRade https://day9.tv/d/Rade/day9-as-a-card/ -->
+  <!-- Day[9] Magic: The Gathering card image is by Per Sikker Hansen https://day9.tv/d/Jarnatan/starcraft-2-magic-the-gathering-set/ -->
+
   <link rel="icon" href="./img/day9.ico" type="image/x-icon">
   <link rel="stylesheet" href="./day9_styles.css" type="text/css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -32,6 +36,14 @@
       });
     });
   </script>
+  <!-- mobile menu display -->
+  <script>
+    $(document).ready(function() {
+      $('.hb-button').on('click', function() {
+        $('nav ul').toggleClass('show');
+      });
+    });
+  </script>
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -48,6 +60,7 @@
       <div class="container">
         <div id="logo">
           <a href="#home"><img src="./img/day9_logo.jpg" alt="Day[9] Logo: Be A Better Gamer"></a>
+          <button class="hb-button"><i class="fa fa-bars"></i></button>
         </div>
         <nav id="nav-anchor">
           <ul class="navHighlighter">
@@ -116,13 +129,11 @@
         <p class="summary-text">In 2013 with constantly reviewing game replays and preparing for shows, and a backlog of games piling up, Sean went on to establish Day[9]'s Day Off on Fridays where he would stream any game of his chosing, and often critique the game's design and mechanics with what the developers did correctly.
       Currently he is focusing on improving his DOTA 2 skills, and streaming practice sessions with a coach.</p>
 
+        <p id="watch-text" class="summary-text">Watch Day[9] Daily #100 and Daily #400 Below!</p>
+
         <div class="youtube">
           <iframe src="https://www.youtube.com/embed/NJztfsXKcPQ" width="560" height="315" frameborder="0" allowfullscreen></iframe>
           <iframe class="youtube-final"src="https://www.youtube.com/embed/9-9VLVkm8R4" width="560" height="315" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <div class="video-text">
-          <p class="summary-text vid-text">Day[9] Daily #100</p>
-          <p class="summary-text vid-text">Day[9] Daily #400</p>
         </div>
 
       </div>

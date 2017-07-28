@@ -40,8 +40,8 @@ iframe {
   display: inline-block;
   font-size: 16px;
   margin: 40px auto 0;
-  margin-left:35%;
-  margin-right:25%;
+  margin-left: 30%;
+  margin-right: 25%;
   cursor: pointer;
 }
 
@@ -103,6 +103,19 @@ header li {
 header #logo {
   float: left;
   margin: 0;
+}
+
+.hb-button {
+  float: right;
+  background: #222;
+  color: var(--day9yellow);
+  border: none;
+  font-size: 18;
+  padding: 5px 10px;
+  margin: 8px 0px;
+  border-radius: 3px;
+  cursor: pointer;
+  display: none;
 }
 
 header nav {
@@ -192,6 +205,11 @@ header a:hover {
   text-align: center;
 }
 
+#day9TVpage #watch-text {
+  margin-top: 30px;
+  color: var(--day9yellow);
+}
+
 #day9TVpage iframe {
   float: left;
   margin-top: 40px;
@@ -202,11 +220,6 @@ header a:hover {
 
 #day9TVpage .youtube-final {
   margin-right: 0;
-}
-
-#day9TVpage .vid-text {
-  float: left;
-  width: 50%;
 }
 
 
@@ -462,12 +475,6 @@ footer .credits a:hover {
     margin-bottom: 50;
   }
 
-  #day9TVpage .vid-text {
-    float: none;
-    display: none;
-    width: 50%;
-  }
-
   #cardspage p {
     -ms-transform: translateY(30%);
     -webkit-transform: translateY(30%);
@@ -545,28 +552,22 @@ footer .credits a:hover {
 }
 
 
-/* Navbar change */
+/* Navbar change for tablets */
 @media screen and (max-width: 938px) {
-  /*header {
-    display: block;
-  }*/
-
-/* header not displaying correctly */
-  header #logo {
+  header #logo,
+  header nav,
+  header nav li {
     float: none;
-    max-width: 100%;
-    margin: 0 auto;
-    /*display: block;
-    margin-left: auto;
-    margin-right: auto;*/
+    text-align: center;
+    width: 100%;
   }
 
-  header nav {
-    float: none;
-    /*display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 10px;*/
+  header {
+    padding-bottom: 10px;
+  }
+
+  #homepage {
+    margin-top: 150px;
   }
 }
 
@@ -602,9 +603,29 @@ footer .credits a:hover {
 }
 
 /* navbar change fully */
-@media screen and (max-width: 695px) {
-  header nav {
-    display: none;
+@media screen and (max-width: 722px) { /* was 695 changed due to navbar */
+  nav ul {
+    max-height: 0;
+    width: 100%;
+  }
+
+  nav ul.show {
+    max-height: 20em;
+  }
+
+  nav ul li {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px;
+  }
+
+  .hb-button {
+    display: inline;
+  }
+
+  #homepage {
+    margin-top: 100px;
   }
 
   #cardspage img {
