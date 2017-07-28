@@ -5,20 +5,19 @@
 }
 
 body {
+  background-color: #000;
   font-family: verdana, Arial, Helvetica, sans-serif;
   font-size: 15px;
   line-height: 1.5;
-  padding: 0;
   margin: 0;
-  background-color: #000000;
+  padding: 0;
 }
-
 
 /* Global */
 .container {
-  width: 80%;
   margin: auto;
   overflow: hidden;
+  width: 80%;
 }
 
 ul {
@@ -34,35 +33,31 @@ iframe {
   background-color: var(--day9yellow);
   border: none;
   color: black;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
+  cursor: pointer;
   display: inline-block;
   font-size: 16px;
   margin: 40px auto 0;
-  margin-left: 30%;
   margin-right: 25%;
-  cursor: pointer;
+  margin-left: 30%;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
 }
 
 .button:hover {
     background-color: #cc7e00;
 }
 
-
 /* Scroll anchor tag locations */
 .smooth {
   padding-top: 100px;
 }
-
 #homepage .smooth {
   padding-top: 150px;
 }
-
 #starcraftpage .smooth {
   padding-top: 150px;
 }
-
 #cardspage .smooth {
   padding-top: 200px;
 }
@@ -70,23 +65,23 @@ iframe {
 
 /* Header */
 header {
-  background: #000000;
-  color: #d7d5ca;
-  padding-top: 10px;
-  min-height: 60px;
+  background: #000;
   border-bottom: var(--day9yellow) 2px solid;
+  color: #d7d5ca;
+  min-height: 60px;
+  padding-top: 10px;
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 9999; /* Due to text transform */
+  z-index: 9999;
 }
 
 header a {
   color: #d7d5ca;
-  text-decoration: none;
   font-family: verdana;
-  text-transform: uppercase;
   font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
 }
 
 header a.underline {
@@ -95,8 +90,8 @@ header a.underline {
 }
 
 header li {
-  float: left;
   display: inline;
+  float: left;
   padding: 0 20px 0 20px;
 }
 
@@ -106,16 +101,16 @@ header #logo {
 }
 
 .hb-button {
-  float: right;
   background: #222;
-  color: var(--day9yellow);
   border: none;
-  font-size: 18;
-  padding: 5px 10px;
-  margin: 8px 0px;
   border-radius: 3px;
+  color: var(--day9yellow);
   cursor: pointer;
   display: none;
+  float: right;
+  font-size: 18;
+  margin: 6px 0px;
+  padding: 10px 10px;
 }
 
 header nav {
@@ -130,8 +125,8 @@ header a:hover {
 
 /* Homepage */
 #homepage {
-  margin-top: 200px;
   color: #d7d5ca;
+  margin-top: 200px;
 }
 
 #homepage img {
@@ -156,8 +151,8 @@ header a:hover {
 }
 
 #starcraftpage h1 {
-  float: left;
   color: var(--day9yellow);
+  float: left;
   font-size: 32px;
   margin-top: 30px;
   margin-bottom: 20px;
@@ -173,9 +168,9 @@ header a:hover {
 }
 
 #starcraftpage p {
+  color: #d7d5ca;
   float: left;
   width: 60%;
-  color: #d7d5ca;
 }
 
 
@@ -186,8 +181,8 @@ header a:hover {
 
 #day9TVpage h1, h2 {
   color: var(--day9yellow);
-  width: 100%;
   text-align: center;
+  width: 100%;
 }
 
 #day9TVpage h1 {
@@ -206,16 +201,16 @@ header a:hover {
 }
 
 #day9TVpage #watch-text {
-  margin-top: 30px;
   color: var(--day9yellow);
+  margin-top: 30px;
 }
 
 #day9TVpage iframe {
   float: left;
   margin-top: 40px;
   margin-right: 5em;
-  width: 45%;
   margin-left: 10px;
+  width: 45%;
 }
 
 #day9TVpage .youtube-final {
@@ -229,8 +224,8 @@ header a:hover {
 }
 
 #cardspage h1 {
-  float: right;
   color: var(--day9yellow);
+  float: right;
   font-size: 22px;
   margin-top: 30px;
   margin-bottom: 10px;
@@ -254,10 +249,10 @@ header a:hover {
 }
 
 #cardspage p {
-  float: right;
-  width: 52%;
-  text-align: justify;
   color: #d7d5ca;
+  float: right;
+  text-align: justify;
+  width: 52%;
 }
 
 #cardspage .box {
@@ -275,10 +270,10 @@ header a:hover {
 #designpage h1 {
   color: var(--day9yellow);
   font-size: 32px;
-  text-align: center;
-  width: 100%;
   margin-top: 30px;
   margin-bottom: 20px;
+  text-align: center;
+  width: 100%;
 }
 
 #designpage img {
@@ -290,21 +285,21 @@ header a:hover {
 
 #designpage p {
   color: #d7d5ca;
-  text-align: center;
   margin-bottom: 30px;
+  text-align: center;
 }
 
 
 /* Footer */
 footer {
-  padding: 20px;
-  margin-top: 20px;
-  color: #d7d5ca;
-  text-align: center;
-  padding-top: 30px;
-  min-height: 70px;
+  background-color: #000;
   border-top: var(--day9yellow) 2px solid;
-  background-color: 000000;
+  color: #d7d5ca;
+  margin-top: 20px;
+  min-height: 70px;
+  padding: 20px;
+  padding-top: 30px;
+  text-align: center;
 }
 
 footer .social li {
@@ -348,15 +343,14 @@ footer .credits a:hover {
   #cardspage #mtg-title {
     margin-right: 2.5em;
   }
-
   #cardspage #hearthstone-title {
     margin-right: 5em;
   }
 
   .button {
-    margin-left: 38%;
-    margin-right: 22%;
     margin-top: 60px;
+    margin-right: 22%;
+    margin-left: 38%;
   }
 
   .summary-text {
@@ -379,8 +373,8 @@ footer .credits a:hover {
   }
 
   .button {
-    margin-left: 30%;
     margin-right: 20%;
+    margin-left: 30%;
   }
 }
 
@@ -396,8 +390,8 @@ footer .credits a:hover {
 
   #day9TVpage iframe {
     margin-right: 2em;
-    width: 45%;
     margin-left: 10px;
+    width: 45%;
   }
 
 
@@ -421,22 +415,22 @@ footer .credits a:hover {
 
   #cardspage p {
     float: right;
-    width: 55%;
-    text-align: left;
     font-size: 18px;
     margin-top: 20px;
+    text-align: left;
     -ms-transform: translateY(50%);
     -webkit-transform: translateY(50%);
     transform: translateY(50%);
+    width: 55%;
   }
 
   #cardspage .box {
-    float: none;
     display: inline-block;
+    float: none;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
     text-align: center;
     width: 100%;
-    padding-bottom: 20px;
-    margin-bottom: 40px;
   }
 
   .button {
@@ -462,13 +456,13 @@ footer .credits a:hover {
   }
 
   #day9TVpage iframe {
-    float: none;
     display: block;
+    float: none;
     margin-top: 40px;
     margin-right: 10%;
-    width: 80%;
+    margin-bottom: 60px;
     margin-left: 10%;
-    margin-bottom: 90px;
+    width: 80%;
   }
 
   #day9TVpage .youtube-final {
@@ -494,10 +488,10 @@ footer .credits a:hover {
   }
 
   #homepage img {
-    float: none;
     display: block;
-    margin-left: auto;
+    float: none;
     margin-right: auto;
+    margin-left: auto;
     max-width: 100%;
   }
 
@@ -512,15 +506,15 @@ footer .credits a:hover {
 
   #starcraftpage h1 {
     float: none;
-    width: 100%;
     text-align: center;
+    width: 100%;
   }
 
   #starcraftpage img {
-    float: none;
     display: block;
-    margin-left: auto;
+    float: none;
     margin-right: auto;
+    margin-left: auto;
   }
 
   #starcraftpage p {
@@ -593,8 +587,8 @@ footer .credits a:hover {
 
   #cardspage p {
     float: none;
-    width: 100%;
     text-align: center;
+    width: 100%;
   }
 
   .button {
@@ -603,7 +597,11 @@ footer .credits a:hover {
 }
 
 /* navbar change fully */
-@media screen and (max-width: 722px) { /* was 695 changed due to navbar */
+@media screen and (max-width: 722px) {
+  header a {
+    font-size: 12px;
+  }
+
   nav ul {
     max-height: 0;
     width: 100%;
@@ -614,10 +612,10 @@ footer .credits a:hover {
   }
 
   nav ul li {
-    display: inline-block;
     box-sizing: border-box;
+    display: inline-block;
+    padding: 5px;
     width: 100%;
-    padding: 10px;
   }
 
   .hb-button {
@@ -637,7 +635,7 @@ footer .credits a:hover {
   }
 
   footer .social li {
-    display: block;
+    display: inline-block;
     padding: 20px 20px;
   }
 }
