@@ -599,7 +599,7 @@ footer .credits a:hover {
 /* navbar change fully */
 @media screen and (max-width: 722px) {
   header a {
-    font-size: 12px;
+    font-size: 14px;
   }
 
   nav ul {
@@ -614,7 +614,7 @@ footer .credits a:hover {
   nav ul li {
     box-sizing: border-box;
     display: inline-block;
-    padding: 5px;
+    padding: 8px;
     width: 100%;
   }
 
