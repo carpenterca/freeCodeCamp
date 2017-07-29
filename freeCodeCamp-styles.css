@@ -1,45 +1,129 @@
-/* Cory Carpenter's css for freeCodeCamp portfolio page */
-
 body {
   background-color: #f0f0ff;
+  font-size: 15px;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
 }
 
-.left-wrapper {
-  position: fixed;
-  margin-left: 20%;
-  margin-top: 2%;
-  padding-right: 1%;
-  padding-left: 1%;
-  border-right-color: #00b3b3;
-  border-right-style: solid;
-  border-right-width: thick;
-  border-radius: 3%;
-  border-bottom-left-radius: 2%;
-  border-bottom-right-radius: 3%;
-  box-shadow: 5px 5px 5px 1px #888888; /* h-shadow, v-shadow, blur, shade, color */
-}
-
-.page-creator {
-  margin-top: 180%;
-}
-
-.right-header {
-  margin-top: 2%;
-  float: right;
-}
-
-.summary-text {
-  padding-right: 50%;
-}
-
-.contact-info {
-  margin-bottom: -0.5%;
-}
-
-.license {
-  padding-top: 4%;
+/* Global */
+.container-fluid {
+  margin: auto;
+  overflow: hidden;
+  width: 60%;
 }
 
 li {
   padding-bottom: 3px;
+}
+
+/* left navbar */
+header {
+  background-color: #f0f0ff;
+  border-radius: 3%;
+  border-right-color: #00b3b3;
+  border-right-style: solid;
+  border-right-width: thick;
+  border-bottom-right-radius: 3%;
+  border-bottom-left-radius: 2%;
+  box-shadow: 5px 5px 5px 1px #888; /* h-shadow, v-shadow, blur, shade, color */
+  margin-top: 40px;
+  padding-right: 1%;
+  position: fixed;
+  text-align: center;
+  width: 20%;
+}
+
+header p {
+  text-align: left;
+}
+
+header #nav-header-sub {
+  margin-bottom: 40px;
+}
+
+header .credits {
+  margin-top: 100%;
+  padding-left: 10px;
+}
+
+header .credits p {
+  text-align: center;
+}
+
+/* Content */
+.content {
+  float: right;
+  margin-top: 40px;
+  width: 60%;
+}
+
+.content h1,.content h3 {
+  text-align: center;
+}
+
+.content h1 {
+  text-shadow: 1px 2px #888;
+}
+
+.content h4 {
+  margin-top: 40px;
+}
+
+.content p {
+  text-align: justify;
+}
+
+/* Footer */
+footer {
+  display: none;
+}
+
+/* Media Queries */
+@media screen and (max-width: 1055px) {
+  .container-fluid {
+    width: 90%;
+  }
+
+  header {
+    border-top: 3px solid #00b3b3;
+    border-bottom: 3px solid #00b3b3;
+    border-right-style: none;
+    box-shadow: 0px 2px 5px 1px #888;
+    line-height: 1;
+    margin-top: 5px;
+    padding-right: 0;
+    width: 85%;
+  }
+
+  header #nav-header-sub {
+    margin-bottom: 10px;
+  }
+
+  header .credits {
+    display: none;
+  }
+
+  header p {
+    text-align: center;
+  }
+
+  .content {
+    float: none;
+    margin-top: 180px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .content ol {
+    list-style-position:inside;
+    text-align: center;
+  }
+
+  footer {
+    display: block;
+        line-height: 1;
+    margin-top: 50px;
+    text-align: center;
+  }
 }
