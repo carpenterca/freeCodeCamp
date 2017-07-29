@@ -6,7 +6,8 @@ My collection of projects following the <a href="https://www.freecodecamp.org/" 
 
 ### Front-End Projects
 
-1. <a href="https://carpenterca.github.io/freeCodeCamp/01-Tribute-Page/" target="_blank">Tribute Page</a></strong> (In Progress)
+1. <a href="https://carpenterca.github.io/freeCodeCamp/01-Tribute-Page/" target="_blank">Tribute Page</a></strong> (July 28, 2017)
+2. Personal Portfolio Webpage (In Progress)
 
 
 ### License
