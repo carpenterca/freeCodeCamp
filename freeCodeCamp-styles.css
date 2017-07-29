@@ -127,3 +127,9 @@ footer {
     text-align: center;
   }
 }
+
+@media screen and (max-width: 445px) {
+  .content ol {
+    text-align: left;
+  }
+}
