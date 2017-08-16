@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="Cory Carpenter">
+    <meta name="description" content="Website development based in the Charleston Lowcountry area by Cory Carpenter for personal, small business, and nonprofit organizations.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cory Carpenter Lowcountry Web Development</title>
+    <!--icon-->
+    <link rel="shortcut icon" type="image/png" href=""/>
+
+    <!--twitter-->
+    <!--facebook-->
+
+    <link rel="stylesheet" href="./styles.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $('a[href^="#"]').on('click', function(event) {
+          var target = $(this.getAttribute('href'));
+          if( target.length ) {
+            event.preventDefault();
+            $('html, body').stop().animate({scrollTop: target.offset().top}, 1000);
+          }
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="nav-outer">
+        <div class="nav-wrap">
+          <nav class="navigation">
+            <div class="logo">
+              <a href="#home"><img src="./img/cory_carpenter_logo.png" alt="Cory Carpenter Web Development"></a>
+            </div>
+            <div class='nav'>
+              <ul class="nav-menu">
+                <li><a href="#about">ABOUT</a></li>
+                <li><a href="#portfolio">PORTFOLIO</a></li>
+                <li><a href="#services">SERVICES</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <a id="home" class="smooth"></a>
+    <div class="pimg1">
+      <div class="ptext welcome">
+        <div class="welcome-logo">
+          <img src="./img/cory_carpenter_logo.png" alt="Cory Carpenter Web Development">
+        </div>
+        <div class="welcome-text">
+          <h1 class="border intro">Cory Carpenter<br>Lowcountry Web Development</h1>
+        </div>
+        <div class="btn">
+          <a class="call-to-action" href="#contact">Build a Website</a>
+        </div>
+      </div>
+    </div>
+
+    <a id="about" class="smooth"></a>
+    <section class="section about">
+      <h2>Hey Y'all!</h2>
+      <p>I've grown up here in the Charleston Lowcountry area. I've experienced the living history of Charleston and graduated from the College of Charleston with a bachelor's in computer science in May 2017. I love learning about different cultures and traveling, and you can find the best hospitality in the world right here in Charleston. That's why I want to take the great expereince and hospitality you find in the Lowcountry and infuse them into my website design. Let me give you a tour of some of my recent work.</p>
+    </section>
+
+    <div class="pimg4">
+      <div class="ptext">
+        <span class="border trans">Refreshing</span>
+      </div>
+    </div>
+
+    <a id="portfolio" class="smooth"></a>
+    <section class="section portfolio">
+      <div class="half-one-third">
+        <div class="one-third">
+        <img src="./img/website_view_day9.png" alt="Day9 Tribute Website">
+      </div>
+      <div class="project-description">
+        <h2>Day[9] Tribute Website</h2>
+        <p>Here is the example for the first responsive, single-page website with smooth scrolling effect. It was a lot of fun to make and I enjoyed making something related to one of my favorite streamers.</p>
+        <a class="view-website-button" href="https://carpenterca.github.io/day9tribute/">View the Site</a>
+      </div>
+      </div>
+      <div class="half-one-third">
+        <div class="one-third">
+        <img src="./img/website_view_day9.png" alt="You're Website Here">
+      </div>
+      <div class="project-description">
+        <h2>You're Website Could Go Here</h2>
+        <p>Here I will use the site as a case study detailing what I learned making it, and how it helped your buisness.</p>
+        <a class="view-website-button" href="#">View the Site</a>
+      </div>
+      </div>
+      <div class="half-one-third">
+        <div class="one-third">
+        <img src="./img/website_view_day9.png" alt="You're Website Here">
+      </div>
+      <div class="project-description">
+        <h2>You're Website Could Go Here</h2>
+        <p>Here I will use the site as a case study detailing what I learned making it, and how it helped your buisness.</p>
+        <a class="view-website-button" href="#">View the Site</a>
+      </div>
+      </div>
+    </section>
+
+    <div class="pimg2">
+      <div class="ptext">
+        <span class="border trans">Southern Hospitality</span>
+      </div>
+    </div>
+
+    <a id="services" class="smooth"></a>
+    <section class="section services">
+      <div class="one-third">
+        <img src="./img/logo/HTML5_logo.svg" alt="HTML5">
+        <img src="./img/logo/CSS3_logo.svg" alt="CSS3">
+        <img src="./img/logo/JS_logo.svg" alt="JavaScript">
+      </div>
+      <div class="one-half">
+        <img src="./img/logo/mysql_logo.svg" alt="MySQL">
+        <img src="./img/logo/python_logo.svg" alt="Python">
+      </div>
+      <div class="one-fourth">
+        <div class="web-service">
+          <h3>Web Desgin</h3>
+          <p>Small businesses, nonprofits, personal websites developed responsively for desktop and mobile platforms.</p>
+        </div>
+        <div class="web-service">
+          <h3>Web Hosting</h3>
+          <p>I will get your web hosted for a monthly or annual fee.</p>
+        </div>
+        <div class="web-service">
+          <h3>SEO</h3>
+          <p>Get your site clicked on more often!</p>
+        </div>
+        <div class="web-service">
+          <h3>Social Media</h3>
+          <p>Have your website views grow by engaging with your audience.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="pimg3">
+      <div class="ptext">
+        <span class="border trans">The Holy City</span>
+      </div>
+    </div>
+
+    <a id="contact" class="smooth"></a>
+    <section class="section contact">
+      <aside class="brand">
+        <img src="./img/cory_carpenter_logo.png" alt="Cory Carpenter Web Development">
+        <h1>Cory Carpenter</h1>
+        <ul class="social">
+          <li>carpenterca@g.cofc.edu</li>
+          <li><a class="fa fa-linkedin" href="https://www.linkedin.com/in/carpenterca/" target="_blank"> LinkedIn</a></li>
+          <li><a class="fa fa-desktop" href="https://github.com/carpenterca" target="_blank"> GitHub</a></li>
+          <li><a class="fa fa-twitter" href="https://twitter.com/Owlluin" target="_blank"> Twitter</a></li>
+          <li><a class="fa fa-wordpress" href="https://carpentercacsci.wordpress.com/" target="_blank"> Blog</a></li>
+        </ul>
+      </aside>
+      <div class="two-third">
+        <h2>Let's Build that Website</h2>
+        <p>You've been contemplating it for a while now, so let's get started on that website and share some of that southern hospitality.</p>
+        <form class="client-request" action="index.html" method="post">
+          Name: <input type="text" name="name"><br>
+          Email: <input type="text" name="email"><br>
+          Idea: <textarea cols="50" rows="4" name="idea"></textarea>
+          <input id="submit-btn" type="submit" value="Send Idea">
+        </form>
+      </div>
+    </section>
+
+    <footer>
+      Website created by Cory Carpenter &copy; 2017
+    </footer>
+
+  </body>
+</html>

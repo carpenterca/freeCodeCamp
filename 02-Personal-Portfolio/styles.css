@@ -1,0 +1,281 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Lato", Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.5; /* 1.8em*/
+  color: #666;
+}
+
+/** Global **/
+.section {
+  text-align: center;
+  padding: 50px 80px;
+  background-color: #282e34;
+  color: #ddd;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+/** Navigation Bar **/
+.nav-outer {
+  width: 100%;
+  background-color: #282e34;
+  height: 70px;
+  line-height: 70px;
+  opacity: 0.90;
+  position: fixed;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.logo {
+  float: left;
+}
+
+.logo img {
+  width: 90px;
+  height: auto;
+}
+
+.nav {
+  float: right;
+  margin-right: 30px;
+}
+
+.nav ul li {
+  list-style: none;
+  display: inline-block;
+}
+
+.nav ul li:hover {
+  background-color: #e3e3e3;
+  color: black;
+  transition: all 0.4s;
+}
+
+.nav ul li a {
+  color: #ddd;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 20px;
+}
+
+.nav ul li a:hover {
+  color: black;
+}
+
+
+/** Parallax Background Images **/
+.pimg1, .pimg2, .pimg3, .pimg4 {
+  position: relative;
+  opacity: 0.90;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.pimg1 {
+  background-image: url('./img/Mtpleasant_Park47.jpg');
+  min-height: 100%;
+}
+
+.pimg2 {
+  background-image: url('./img/20170409-charleston-south-carolina-jb0006.jpg');
+  min-height: 400px;
+}
+
+.pimg3 {
+  background-image: url('./img/chs.skyline.jpg');
+  min-height: 400px;
+}
+
+.pimg4 {
+  background-image: url('./img/iStock_000045454468_XXXLarge.jpg');
+  min-height: 300px;
+}
+
+.ptext {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  color: #ddd;
+  font-size: 27px;
+  letter-spacing: 8px;
+}
+
+.ptext .border {
+  background-color: #111;
+  color: #fff;
+  padding: 20px;
+  border-radius: 30px;
+}
+
+.ptext .border.trans {
+  background-color: transparent;
+}
+
+/** Landing Page **/
+.ptext.welcome {
+  top: 15%;
+}
+
+.ptext.welcome-logo {
+  width: 100%;
+}
+
+.ptext .welcome-text {
+  width: 55%;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+
+.ptext h1 {
+  font-size: 27px;
+}
+
+.ptext .btn {
+  max-width: 20%;
+  letter-spacing: normal;
+  text-transform: uppercase;
+  padding: 20px;
+  border: 2px solid #fff;
+  border-radius: 12px;
+  margin: 0 auto;
+}
+
+.ptext .btn a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.ptext .btn a:hover {
+  color: #e1e1e1;
+}
+
+
+/** About Page **/
+.section.about h2 {
+  font-size: 27px;
+}
+
+.section.about p {
+  width: 80%;
+  margin: 0 auto;
+}
+
+
+/** Portfolio Page **/
+.half-one-third {
+  width: 100%;
+  display: inline-block;
+  margin-bottom: 60px;
+}
+
+.section.portfolio .one-third img {
+  max-width: 500px;
+}
+.section.portfolio .one-third {
+  float: left;
+}
+
+.section.portfolio .project-description {
+  margin-top: 50px;
+}
+
+.section.portfolio .project-description p {
+  margin-bottom: 40px;
+}
+
+.section.portfolio .project-description a {
+  text-transform: uppercase;
+  padding: 15px;
+  border: 2px solid #fff;
+  border-radius: 12px;
+  margin: 0 auto;
+  color: #fff;
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+.section.portfolio .project-description a:hover {
+  color: #e1e1e1;
+}
+
+
+/** Services Page **/
+.services img {
+  max-width: 200px;
+  margin-right: 20px;
+}
+
+.services .web-service {
+  display: inline-block;
+  margin-top: 20px;
+  margin-right: 30px;
+  width: 20%;
+  height: 250px;
+  border: 2px solid #fff;
+  border-radius: 12px;
+}
+
+.services .web-service h3 {
+  font-size: 24px;
+}
+
+
+/** Contact Page **/
+.contact aside {
+  float: left;
+}
+
+.contact aside img {
+  max-width: 200px;
+}
+
+.contact aside ul li {
+  list-style: none;
+  display: block;
+}
+
+.contact aside ul li a {
+  text-decoration: none;
+  color: #ddd;
+}
+
+.contact aside ul li a:hover {
+  color: #fff;
+}
+
+.contact input {
+  margin-bottom: 10px;
+}
+
+.contact #submit-btn {
+  display: block;
+  margin: 0 auto;
+  padding: 10px 40px;
+}
+
+
+/** Footer **/
+footer {
+  background-color: black;
+  padding: 20px;
+  text-align: center;
+}
+
+
+/** Media Queries **/
+@media screen and (max-width: 568px) {
+  .pimg1, .pimg2, .pimg3 {
+    background-attachment: scroll;
+  }
+}
