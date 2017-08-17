@@ -6,12 +6,23 @@
     <meta name="description" content="Website development based in the Charleston Lowcountry area by Cory Carpenter for personal, small business, and nonprofit organizations.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Cory Carpenter Lowcountry Web Development</title>
+    <meta name="robots" content="index, follow">
+    <title>Cory Carpenter Lowcountry Web Developer</title>
     <!--icon-->
-    <link rel="shortcut icon" type="image/png" href=""/>
+    <link rel="icon" href="./img/cory_carpenter_logo.ico" type="image/x-icon">
 
     <!--twitter-->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@Owlluin">
+    <meta name="twitter:creator" content="@Owlluin">
+    <meta name="twitter:title" content="Cory Carpenter Lowcountry Web Developer">
+    <meta name="twitter:description" content="Website development based in the Charleston Lowcountry area by Cory Carpenter for personal, small business, and nonprofit organizations.">
+    <meta name="twitter:image" content="https://carpentercacsci.files.wordpress.com/2017/08/portfolio_screenshot_small.png">
     <!--facebook-->
+    <meta property="og:title" content="Cory Carpenter Lowcountry Web Developer" />
+    <meta property="og:image" content="https://carpentercacsci.files.wordpress.com/2017/08/portfolio_screenshot_small.png" />
+    <meta property="og:description" content="Website development based in the Charleston Lowcountry area by Cory Carpenter for personal, small business, and nonprofit organizations." />
+    <meta property="og:url" content="https://carpenterca.github.io/freeCodeCamp/02-Personal-Portfolio/">
 
     <link rel="stylesheet" href="./styles.css" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -28,6 +39,28 @@
           }
         });
       });
+
+      function submitForm() {
+        document.getElementById("submit-btn").disabled = true;
+        document.getElementById("form-status").innerHTML = 'sending...';
+        var formData = new FormData();
+        formData.append("name", document.getElementById("name").value);
+        formData.append("email", document.getElementById("email").value);
+        formData.append("message", document.getElementById("message").value);
+        var ajax = new XMLHttpRequest();
+        ajax.open("POST", "form_parser.php");
+        ajax.onreadystatechange = function() {
+          if(ajax.readyState == 4 && ajax.status == 200) {
+            if(ajax.responseText == "success") {
+              document.getElementById("website-form").innerHTML = '<h2>Thanks ' + document.getElementById("name").value + ' your request was received.</h2>';
+            } else {
+              document.getElementById("form-status").innerHTML = ajax.responseText;
+              document.getElementById("submit-btn").disabled = false;
+            }
+          }
+        }
+      ajax.send(formData);
+    }
     </script>
   </head>
 
@@ -124,13 +157,13 @@
     <a id="services" class="smooth"></a>
     <section class="section services">
       <div class="one-third">
-        <img src="./img/logo/HTML5_logo.svg" alt="HTML5">
-        <img src="./img/logo/CSS3_logo.svg" alt="CSS3">
-        <img src="./img/logo/JS_logo.svg" alt="JavaScript">
+        <img id="html5" src="./img/logo/HTML5_logo.svg" alt="HTML5">
+        <img id="css3" src="./img/logo/CSS3_logo.svg" alt="CSS3">
+        <img id="js" src="./img/logo/JS_logo.svg" alt="JavaScript">
       </div>
       <div class="one-half">
-        <img src="./img/logo/mysql_logo.svg" alt="MySQL">
-        <img src="./img/logo/python_logo.svg" alt="Python">
+        <img id="sql" src="./img/logo/mysql_logo.svg" alt="MySQL">
+        <img id="php" src="./img/logo/php_logo.svg" alt="PHP">
       </div>
       <div class="one-fourth">
         <div class="web-service">
@@ -154,7 +187,7 @@
 
     <div class="pimg3">
       <div class="ptext">
-        <span class="border trans">Contact in the Holy City</span>
+        <span class="border trans">Contact a Charleston Developer</span>
       </div>
     </div>
 
@@ -164,7 +197,7 @@
         <img src="./img/cory_carpenter_logo.png" alt="Cory Carpenter Web Development">
         <h1>Cory Carpenter</h1>
         <ul class="social">
-          <li>carpenterca@g.cofc.edu</li>
+          <li class="my-email"><span class="fa fa-envelope"></span> carpenterca@g.cofc.edu</li>
           <li><a class="fa fa-linkedin" href="https://www.linkedin.com/in/carpenterca/" target="_blank"> LinkedIn</a></li>
           <li><a class="fa fa-desktop" href="https://github.com/carpenterca" target="_blank"> GitHub</a></li>
           <li><a class="fa fa-twitter" href="https://twitter.com/Owlluin" target="_blank"> Twitter</a></li>
@@ -174,11 +207,14 @@
       <div class="two-third">
         <h2>Let's Build that Website</h2>
         <p>You've been contemplating it for a while now, so let's get started on that website and share some of that southern hospitality.</p>
-        <form class="client-request" action="index.html" method="post">
-          Name: <input type="text" name="name"><br>
-          Email: <input type="text" name="email"><br>
-          Idea: <textarea cols="50" rows="4" name="idea"></textarea>
-          <input id="submit-btn" type="submit" value="Send Idea">
+        <form id="website-form" class="client-request" onsubmit="submitForm(); return false;" method="post">
+          <!--<label for="name">Name:</label>-->
+          <input id="name" type="text" name="name" placeholder="Name" required><br>
+          <!--<label for="email">Email:</label>-->
+          <input id="email" type="email" name="email" placeholder="Email" required><br>
+          <!--<label for="idea">Idea:</label>-->
+          <textarea id="message" cols="80" rows="8" name="message" placeholder="Type your website desires here." required></textarea>
+          <input id="submit-btn" type="submit" value="Send Site Idea"><span class="form-status"></span>
         </form>
       </div>
     </section>
