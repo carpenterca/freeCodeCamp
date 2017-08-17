@@ -15,6 +15,7 @@ html, body {
   padding: 50px 80px;
   background-color: #282e34;
   color: #ddd;
+  overflow: hidden;
 }
 
 ul {
@@ -42,6 +43,20 @@ ul {
 .logo img {
   height: 70px;
   width: auto;
+}
+
+.hb-button {
+  background: #222;
+  border: none;
+  border-radius: 3px;
+  color: #ffdab3;
+  cursor: pointer;
+  display: none;
+  float: right;
+  font-size: 18;
+  margin: 6px 0px;
+  margin-left: 200px;
+  padding: 10px 10px;
 }
 
 .nav {
@@ -86,18 +101,18 @@ ul {
 }
 
 .pimg2 {
+  background-image: url('./img/sweet_tea.jpg');
+  min-height: 300px;
+}
+
+.pimg3 {
   background-image: url('./img/pinapple_fountain_charleston.jpg');
   min-height: 400px;
 }
 
-.pimg3 {
+.pimg4 {
   background-image: url('./img/charleston_skyline.jpg');
   min-height: 400px;
-}
-
-.pimg4 {
-  background-image: url('./img/sweet_tea.jpg');
-  min-height: 300px;
 }
 
 .ptext {
@@ -164,18 +179,18 @@ ul {
 }
 
 /** About Page **/
-.section.about h2 {
+.about h2 {
   font-size: 27px;
 }
 
-.section.about p {
+.about p {
   width: 80%;
   margin: 0 auto;
   padding-bottom: 20px;
 }
 
 /** Portfolio Page **/
-.half-one-third {
+.project {
   width: 100%;
   display: inline-block;
   margin-bottom: 40px;
@@ -183,16 +198,16 @@ ul {
   border-bottom: 2px solid black;
 }
 
-.half-one-third.last-child {
+.project.last-child {
   margin-bottom: 0;
   padding-bottom: 10px;
   border-bottom: none;
 }
 
-.portfolio .one-third img {
+.portfolio .project-image img {
   max-width: 500px;
 }
-.section.portfolio .one-third {
+.portfolio .project-image {
   float: left;
 }
 
@@ -237,7 +252,7 @@ ul {
   height: auto;
 }
 
-.services .one-fourth {
+.services .service-offered {
   width: 100%;
   display: table;
   border-spacing: 10px;
@@ -307,12 +322,12 @@ ul {
   color: #fff;
 }
 
-.contact .two-third {
+.contact .build-a-website {
   max-width: 75%;
   float: right;
 }
 
-.contact .two-third p {
+.contact .build-a-website p {
   margin: 0 auto;
   width: 70%;
   padding-bottom: 10px;
@@ -351,13 +366,192 @@ footer {
 
 
 /** Media Queries **/
+@media screen and (max-width: 1525px) {
+  /* portfolio text and buttons start shifting weirdly */
+  .portfolio .project-description a {
+    display: inline-block;
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 1325px) {
+  /* portfolio heading and text display blocks */
+  .portfolio .project-image {
+    float: none;
+    margin: 0 auto;
+  }
+  .portfolio img {
+    width: 100%;
+  }
+  .portfolio .project-description h2 {
+    display: inline-block;
+    width: 100%;
+  }
+  .portfolio .project-description p {
+    display: inline-block;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1180px) {
+  /* contact message area gets too close to left and input boxes go below everything*/
+  .contact aside {
+    max-width: 100%;
+    border-right: none;
+    float: none;
+    padding-top: 10px;
+  }
+  .contact img {
+    float: left;
+  }
+  .contact .build-a-website {
+    max-width: 100%;
+    float: none;
+    padding-bottom: 30px;
+    border-bottom: 2px solid black;
+  }
+}
+
+@media screen and (max-width: 1080px) {
+  /* services icons start to get on different lines */
+  .services img {
+    margin: 0 auto;
+    margin-right: 30px;
+    margin-bottom: 20px;
+  }
+  .services .service-offered {
+    width: 100%;
+    display: inline-block;
+  }
+  .services .web-service {
+    display: inline-block;
+    margin-right: 0;
+    width: 80%;
+    height: 250px;
+  }
+  .services .web-service p {
+    text-align: center;
+  }
+  .contact #submit-btn {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 745px) {
+  /* nav bar change to mobile and service icons change to blocks and text in boxes start to overflow */
+  /* change input to max width */
+  .nav-outer {
+    height: 50px;
+    line-height: 50px;
+    opacity: 0.90;
+  }
+  .logo img {
+    height: 50px;
+    width: auto;
+  }
+  header .nav {
+    display: none;
+  }
+
+  .services img {
+    margin: 0 auto;
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+  .services .web-service {
+    width: 100%;
+    height: auto;
+  }
+  .contact input#name, .contact input#email {
+    width: 100%;
+  }
+  .contact textarea {
+    width: 100%;
+  }
+  .contact #submit-btn {
+    width: 100%;
+  }
+  .contact .social li {
+    display: inline-block;
+    padding-right: 15px;
+    padding-bottom: 5px;
+  }
+}
+
+@media screen and (max-width: 625px) {
+  .pimg1 {
+    background-image: url('./img/mtpleasant_salt_marsh_small.jpg');
+  }
+  .pimg2 {
+    background-image: url('./img/sweet_tea_small.jpg');
+  }
+  .pimg3 {
+    background-image: url('./img/pinapple_fountain_charleston_small.jpg');
+  }
+  .pimg4 {
+    background-image: url('./img/charleston_skyline_small.jpg');
+  }
+  .contact img {
+    float: none;
+  }
+  .portfolio .project-description a {
+    width: 80%;
+    display: block;
+  }
+}
+
 @media screen and (max-width: 568px) {
   .pimg1, .pimg2, .pimg3, .pimg4 {
     background-attachment: scroll;
   }
+  .ptext .welcome-text {
+    width: 95%;
+    margin-bottom: 60px;
+  }
+  .ptext .welcome-text h1 {
+    font-size: 20px;
+  }
 }
 
-@media screen and (max-width: 1025px) {
-  /* contact message area gets too close to left and input boxes go below everything*/
-  /* services icons start to get on different lines */
+@media screen and (max-width: 370px) {
+  .ptext img {
+    height: 150px;
+  }
+  .ptext .welcome-text h1 {
+    font-size: 18px;
+    font-weight: 300;
+  }
+  .ptext .btn a {
+    font-size: 16px;
+  }
+  .section {
+    text-align: justify;
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+  .section h1, h2, h3, a {
+    text-align: center;
+  }
+  .contact .social li {
+    padding-right: 5px;
+  }
+  .services img {
+    width: 100%;
+    margin: 0 auto;
+  }
+  .services #sql {
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+  }
+  .services #php {
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+  }
+  .contact aside img {
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+  }
 }

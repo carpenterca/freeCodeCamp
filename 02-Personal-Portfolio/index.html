@@ -40,6 +40,16 @@
         });
       });
 
+      //mobile menu display
+      $('.hb-button').on('click', function() {
+        $('nav ul').toggleClass('show');
+      });
+      $('.nav a').on('click', function() {
+        if( $('.nav ul').hasClass('show') ) {
+          $('.nav ul').toggleClass('show');
+        }
+      });
+
       function submitForm() {
         document.getElementById("submit-btn").disabled = true;
         document.getElementById("form-status").innerHTML = 'sending...';
@@ -72,6 +82,7 @@
           <nav class="navigation">
             <div class="logo">
               <a href="#home"><img src="./img/cory_carpenter_logo.png" alt="Cory Carpenter Web Development"></a>
+              <button class="hb-button"><i class="fa fa-bars"></i></button>
             </div>
             <div class='nav'>
               <ul class="nav-menu">
@@ -108,7 +119,7 @@
       <p>I've grown up in the South Carolina Lowcountry area, and experienced the living history of Charleston. It’s such a beautiful area that I decided to go to and graduated from the College of Charleston with a bachelor’s degree in computer science in May 2017. I love learning about different cultures and traveling, and there’s no doubt you can find the best hospitality in the world right here in Charleston. That's why I want to take the great experience and hospitality you find in the Lowcountry and infuse them into my website design and customer interactions. Let me give you a tour of some of my recent work.</p>
     </section>
 
-    <div class="pimg4">
+    <div class="pimg2">
       <div class="ptext">
         <span class="border trans">Refreshing Portfolio</span>
       </div>
@@ -116,39 +127,39 @@
 
     <a id="portfolio" class="smooth"></a>
     <section class="section portfolio">
-      <div class="half-one-third">
-        <div class="one-third">
-        <img src="./img/website_view_day9.png" alt="Day9 Tribute Website">
+      <div class="project">
+        <div class="project-image">
+          <img src="./img/website_view_day9.png" alt="Day9 Tribute Website">
+        </div>
+        <div class="project-description">
+          <h2>Day[9] Tribute Website</h2>
+          <p>Built to detail the accomplishments of Sean “Day[9]” Plott, and to introduce people to his positive streaming community. This is the first “real” website I developed which proved to be an exciting challenge. The most daunting aspect was making the site responsive for desktops, tablets, and mobile devices. I also wanted to design the website using a single-page layout with a smooth scrolling effect. In the past few years this design has greatly increased in popularity and is another practical design for mobile devices. All in all, it was exactly the learning experience I was looking for stepping into website development.</p>
+          <a class="view-website-button" href="https://carpenterca.github.io/day9tribute/" target="_blank">View the Site</a>
+        </div>
       </div>
-      <div class="project-description">
-        <h2>Day[9] Tribute Website</h2>
-        <p>Built to detail the accomplishments of Sean “Day[9]” Plott, and to introduce people to his positive streaming community. This is the first “real” website I developed which proved to be an exciting challenge. The most daunting aspect was making the site responsive for desktops, tablets, and mobile devices. I also wanted to design the website using a single-page layout with a smooth scrolling effect. In the past few years this design has greatly increased in popularity and is another practical design for mobile devices. All in all, it was exactly the learning experience I was looking for stepping into website development.</p>
-        <a class="view-website-button" href="https://carpenterca.github.io/day9tribute/" target="_blank">View the Site</a>
+      <div class="project">
+        <div class="project-image">
+          <img src="./img/website_view_template.png" alt="You're Website Here">
+        </div>
+        <div class="project-description">
+          <h2>Your Website Could Go Here</h2>
+          <p>Here I will talk about what exciting and challenging parts of the development process took place, and how I accomplished them. It will also feature how the website has benefited the client, and link to the working version of their site.</p>
+          <a class="view-website-button" href="#" target="_blank">View the Site</a>
+        </div>
       </div>
-      </div>
-      <div class="half-one-third">
-        <div class="one-third">
-        <img src="./img/website_view_template.png" alt="You're Website Here">
-      </div>
-      <div class="project-description">
-        <h2>Your Website Could Go Here</h2>
-        <p>Here I will talk about what exciting and challenging parts of the development process took place, and how I accomplished them. It will also feature how the website has benefited the client, and link to the working version of their site.</p>
-        <a class="view-website-button" href="#" target="_blank">View the Site</a>
-      </div>
-      </div>
-      <div class="half-one-third last-child">
-        <div class="one-third">
-        <img src="./img/website_view_template.png" alt="You're Website Here">
-      </div>
-      <div class="project-description">
-        <h2>Your Website Could Go Here</h2>
-        <p>Here I will talk about what exciting and challenging parts of the development process took place, and how I accomplished them. It will also feature how the website has benefited the client, and link to the working version of their site.</p>
-        <a class="view-website-button" href="#" target="_blank">View the Site</a>
-      </div>
+      <div class="project last-child">
+        <div class="project-image">
+          <img src="./img/website_view_template.png" alt="You're Website Here">
+        </div>
+        <div class="project-description">
+          <h2>Your Website Could Go Here</h2>
+          <p>Here I will talk about what exciting and challenging parts of the development process took place, and how I accomplished them. It will also feature how the website has benefited the client, and link to the working version of their site.</p>
+          <a class="view-website-button" href="#" target="_blank">View the Site</a>
+        </div>
       </div>
     </section>
 
-    <div class="pimg2">
+    <div class="pimg3">
       <div class="ptext">
         <span class="border trans">Southern Hospitality Services</span>
       </div>
@@ -156,16 +167,16 @@
 
     <a id="services" class="smooth"></a>
     <section class="section services">
-      <div class="one-third">
+      <div class="top-logos">
         <img id="html5" src="./img/logo/HTML5_logo.svg" alt="HTML5">
         <img id="css3" src="./img/logo/CSS3_logo.svg" alt="CSS3">
         <img id="js" src="./img/logo/JS_logo.svg" alt="JavaScript">
       </div>
-      <div class="one-half">
+      <div class="bottom-logos">
         <img id="sql" src="./img/logo/mysql_logo.svg" alt="MySQL">
         <img id="php" src="./img/logo/php_logo.svg" alt="PHP">
       </div>
-      <div class="one-fourth">
+      <div class="service-offered">
         <div class="web-service">
           <h3>Web Desgin</h3>
           <p>I love developing sites that provide a positive user experience best representing the business. I specialize working with small businesses, nonprofits, and personal websites developed responsively for desktop and mobile platforms.</p>
@@ -185,7 +196,7 @@
       </div>
     </section>
 
-    <div class="pimg3">
+    <div class="pimg4">
       <div class="ptext">
         <span class="border trans">Contact a Charleston Developer</span>
       </div>
@@ -193,6 +204,16 @@
 
     <a id="contact" class="smooth"></a>
     <section class="section contact">
+      <div class="build-a-website">
+        <h2>Let's Build that Website</h2>
+        <p>You've been contemplating it for a while now, so let's get started on that new website idea you have, and spread some of that southern hospitality.</p>
+        <form id="website-form" class="client-request" onsubmit="submitForm(); return false;" method="post">
+          <input id="name" type="text" name="name" placeholder="Name" required><br>
+          <input id="email" type="email" name="email" placeholder="Email" required><br>
+          <textarea id="message" rows="8" name="message" placeholder="Type your website desires here" required></textarea>
+          <input id="submit-btn" type="submit" value="Get Free Quote"><span class="form-status"></span>
+        </form>
+      </div>
       <aside class="brand">
         <img src="./img/cory_carpenter_logo.png" alt="Cory Carpenter Web Development">
         <h1>Cory Carpenter</h1>
@@ -204,16 +225,6 @@
           <li><a class="fa fa-wordpress" href="https://carpentercacsci.wordpress.com/" target="_blank"> Blog</a></li>
         </ul>
       </aside>
-      <div class="two-third">
-        <h2>Let's Build that Website</h2>
-        <p>You've been contemplating it for a while now, so let's get started on that new website idea you have, and spread some of that southern hospitality.</p>
-        <form id="website-form" class="client-request" onsubmit="submitForm(); return false;" method="post">
-          <input id="name" type="text" name="name" placeholder="Name" required><br>
-          <input id="email" type="email" name="email" placeholder="Email" required><br>
-          <textarea id="message" rows="8" name="message" placeholder="Type your website desires here" required></textarea>
-          <input id="submit-btn" type="submit" value="Get Free Quote"><span class="form-status"></span>
-        </form>
-      </div>
       <span class="clear"></span>
     </section>
 
