@@ -261,12 +261,18 @@ ul {
 
 .services .web-service p {
   width: 90%;
-  margin-left: 10px;
+  margin-left: 20px;
+  text-align: left;
 }
 
 /** Contact Page **/
+.contact {
+  overflow: hidden;
+}
+
 .contact aside {
   float: left;
+  max-width: 25%;
   border-right: 2px solid black;
 }
 
@@ -301,6 +307,17 @@ ul {
   color: #fff;
 }
 
+.contact .two-third {
+  max-width: 75%;
+  float: right;
+}
+
+.contact .two-third p {
+  margin: 0 auto;
+  width: 70%;
+  padding-bottom: 10px;
+}
+
 .contact input {
   margin-bottom: 15px;
 }
@@ -318,6 +335,11 @@ ul {
   display: block;
   margin: 0 auto;
   padding: 10px 40px;
+}
+
+span.clear {
+  clear: both;
+  display: block;
 }
 
 /** Footer **/
