@@ -86,7 +86,7 @@ nav a {
   width: 100%;
 }
 
-nav button {
+.handle button {
   background: #282e34;
   color: #ddd;
   cursor: pointer;
