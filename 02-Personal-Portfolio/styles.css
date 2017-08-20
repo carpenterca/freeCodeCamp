@@ -45,46 +45,42 @@ ul {
   width: auto;
 }
 
-.nav .icon {
-    display: none;
-}
 .hb-button {
-  background: #222;
+  background: #282e34;
   border: none;
   border-radius: 3px;
-  color: #ffdab3;
+  color: #ddd;
   cursor: pointer;
   display: none;
   float: right;
-  font-size: 18;
-  margin: 6px 0px;
-  margin-left: 200px;
+  font-size: 20px;
+  margin-left: 75vw; /* 568px change to 65vw, temp fix */
   padding: 10px 10px;
 }
 
-.nav {
+nav {
   float: right;
   margin-right: 30px;
 }
 
-.nav ul li {
+nav ul li {
   list-style: none;
   display: inline-block;
 }
 
-.nav ul li:hover {
+nav ul li:hover {
   background-color: #ffdab3;
   transition: all 0.4s;
 }
 
-.nav ul li a {
+nav ul li a {
   color: #ddd;
   text-decoration: none;
   text-transform: uppercase;
   padding: 20px;
 }
 
-.nav ul li a:hover {
+nav ul li a:hover {
   color: #000;
 }
 
@@ -124,6 +120,7 @@ ul {
   letter-spacing: 8px;
   position: absolute;
   text-align: center;
+  text-shadow: 1px 1px #2a2727;
   text-transform: uppercase;
   top: 50%;
   width: 100%;
@@ -143,6 +140,7 @@ ul {
 /** Landing Page **/
 .ptext.welcome {
   top: 15%;
+  text-shadow: none;
 }
 
 .ptext img {
@@ -377,6 +375,12 @@ ul {
   text-transform: uppercase;
 }
 
+.contact #form-status {
+  color: #ddd;
+  font-size: 14px;
+  margin: 5px;
+}
+
 span.clear {
   clear: both;
   display: block;
@@ -494,15 +498,34 @@ footer {
     height: 50px;
     width: auto;
   }
-  /*header .nav {
+  .hb-button {
+    display: inline-block;
+    float: right;
+  }
+  header nav,
+  header nav li {
+    float: none;
+    text-align: center;
+    width: 100%;
+  }
+  /*.nav li {
     display: none;
   }*/
-  .nav li {
-    display: none;
+  nav a {
+    font-size: 14px;
   }
-  .nav a.icon {
-    float: right;
-    display: block;
+  nav ul {
+    max-height: 0;
+    width: 100%;
+  }
+  nav ul.show {
+    max-height: 90px;
+  }
+  nav ul li {
+    box-sizing: border-box;
+    display: inline-block;
+    padding: 8px;
+    width: 100%;
   }
 
 
@@ -577,6 +600,9 @@ footer {
 }
 
 @media screen and (max-width: 568px) {
+  .hb-button {
+    margin-left: 65vw;
+  }
   .pimg1, .pimg2, .pimg3, .pimg4 {
     background-attachment: scroll;
   }

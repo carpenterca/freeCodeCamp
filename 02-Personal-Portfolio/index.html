@@ -41,62 +41,39 @@
             $('html, body').stop().animate({scrollTop: target.offset().top}, 1000);
           }
         });
-      });
 
-      //mobile menu display
-      $('.hb-button').on('click', function() {
-        $('.nav ul').toggleClass('show');
-      });
-      $('.nav a').on('click', function() {
-        if( $('.nav ul').hasClass('show') ) {
-          $('.nav ul').toggleClass('show');
-        }
-      });
-
-      //mobile menu display
-      function myFunction() {
-        var x = document.getElementById("myTopnav");
-        if (x.className === "topnav") {
-          x.className += " responsive";
-        } else {
-          x.className = "topnav";
-        }
-      }
-
-      function submitForm() {
-        document.getElementById("submit-btn").disabled = true;
-        document.getElementById("form-status").innerHTML = 'sending...';
-        var formData = new FormData();
-        formData.append("name", document.getElementById("name").value);
-        formData.append("email", document.getElementById("email").value);
-        formData.append("message", document.getElementById("message").value);
-        var ajax = new XMLHttpRequest();
-        ajax.open("POST", "form_parser.php");
-        ajax.onreadystatechange = function() {
-          if(ajax.readyState == 4 && ajax.status == 200) {
-            if(ajax.responseText == "success") {
-              document.getElementById("website-form").innerHTML = '<h2>Thank you ' + document.getElementById("name").value + ', your request was received.</h2>';
-            } else {
-              document.getElementById("form-status").innerHTML = ajax.responseText;
-              document.getElementById("submit-btn").disabled = false;
-            }
+        //mobile menu display
+        $('.hb-button').on('click', function() {
+          $('nav ul').toggleClass('show');
+        });
+        $('nav a').on('click', function() {
+          if( $('nav ul').hasClass('show') ) {
+            $('nav ul').toggleClass('show');
           }
-        }
-      ajax.send(formData);
-    }
+        });
+
+        //prevent form page refresh
+        $(".client-request").submit(function (e) {
+          e.preventDefault();
+          document.getElementById("submit-btn").disabled = true;
+          document.getElementById("form-status").innerHTML = 'Thank you ' + document.getElementById("name").value + ', your message was received.';
+          $('#submit-btn').css('cursor', 'default');
+          //return false;
+        });
+
+      });
     </script>
   </head>
 
   <body>
 
-    <header>
-      <div class="nav-outer">
+    <header class="nav-outer">
         <div class="logo">
           <a href="#home"><img src="./img/cory_carpenter_logo.png" alt="Cory Carpenter Web Development"></a>
           <!--<a href="javascript:void(0);" class="hb-button">&#9776;</a>-->
           <button class="hb-button"><i class="fa fa-bars"></i></button>
         </div>
-        <nav class='nav'>
+        <nav>
           <ul class="nav-menu">
             <li><a href="#home">HOME</a></li>
             <li><a href="#about">ABOUT</a></li>
@@ -105,7 +82,6 @@
             <li><a href="#contact">CONTACT</a></li>
           </ul>
         </nav>
-      </div>
     </header>
 
     <a id="home" class="smooth"></a>
@@ -217,12 +193,13 @@
       <div class="build-a-website">
         <h2>Let's Build that Website</h2>
         <p>You've been contemplating it for a while now, so let's get started on that new website idea you have, and share some of that southern hospitality.</p>
-        <form id="website-form" class="client-request" onsubmit="submitForm(); return false;" method="post">
+        <form id="website-form" class="client-request" action="" method="post">
           <input id="name" type="text" name="name" placeholder="Name" required><br>
           <input id="email" type="email" name="email" placeholder="Email" required><br>
           <textarea id="message" rows="8" name="message" placeholder="Type your website desires here" required></textarea>
-          <input id="submit-btn" type="submit" value="Get Free Quote"><span class="form-status"></span>
+          <input id="submit-btn" type="submit" value="Get Free Quote">
         </form>
+        <span id="form-status"></span>
       </div>
       <aside class="brand">
         <img src="./img/cory_carpenter_logo.png" alt="Cory Carpenter Web Development">
