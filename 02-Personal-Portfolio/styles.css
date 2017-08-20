@@ -1,21 +1,21 @@
 html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
+  color: #ddd;
   font-family: Helvetica, sans-serif;
   font-size: 18px;
   font-weight: 400;
+  height: 100%;
   line-height: 1.5;
-  color: #ddd;
+  margin: 0;
+  padding: 0;
 }
 
 /** Global **/
 .section {
-  text-align: center;
-  padding: 50px 80px;
   background-color: #282e34;
   color: #ddd;
   overflow: hidden;
+  padding: 50px 80px;
+  text-align: center;
 }
 
 ul {
@@ -45,6 +45,9 @@ ul {
   width: auto;
 }
 
+.nav .icon {
+    display: none;
+}
 .hb-button {
   background: #222;
   border: none;
@@ -87,12 +90,12 @@ ul {
 
 /** Parallax Background Images **/
 .pimg1, .pimg2, .pimg3, .pimg4 {
-  position: relative;
-  opacity: 0.90;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
   background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.90;
+  position: relative;
 }
 
 .pimg1 {
@@ -116,21 +119,21 @@ ul {
 }
 
 .ptext {
-  position: absolute;
-  top: 50%;
-  width: 100%;
-  text-align: center;
   color: #ddd;
   font-size: 27px;
   letter-spacing: 8px;
+  position: absolute;
+  text-align: center;
   text-transform: uppercase;
+  top: 50%;
+  width: 100%;
 }
 
 .ptext .border {
   background-color: #111;
+  border-radius: 30px;
   color: #fff;
   padding: 20px;
-  border-radius: 30px;
 }
 
 .ptext .border.trans {
@@ -151,9 +154,9 @@ ul {
 }
 
 .ptext .welcome-text {
-  width: 55%;
   margin: 0 auto;
   margin-bottom: 40px;
+  width: 55%;
 }
 
 .ptext h1 {
@@ -161,21 +164,20 @@ ul {
 }
 
 .ptext .btn a {
-  max-width: 20%;
-  letter-spacing: normal;
-  text-transform: uppercase;
-  padding: 20px;
   border: 2px solid #fff;
   border-radius: 12px;
-  margin: 0 auto;
-
   color: #fff;
+  letter-spacing: normal;
+  margin: 0 auto;
+  padding: 20px;
   text-decoration: none;
+  text-transform: uppercase;
+  max-width: 20%;
 }
 
 .ptext .btn a:hover {
-  color: #ffdab3;
   border-color: #ffdab3;
+  color: #ffdab3;
 }
 
 /** About Page **/
@@ -184,24 +186,24 @@ ul {
 }
 
 .about p {
-  width: 80%;
   margin: 0 auto;
   padding-bottom: 20px;
+  width: 80%;
 }
 
 /** Portfolio Page **/
 .project {
-  width: 100%;
+  border-bottom: 2px solid black;
   display: inline-block;
   margin-bottom: 40px;
   padding-bottom: 30px;
-  border-bottom: 2px solid black;
+  width: 100%;
 }
 
 .project.last-child {
+  border-bottom: none;
   margin-bottom: 0;
   padding-bottom: 10px;
-  border-bottom: none;
 }
 
 .portfolio .project-image img {
@@ -220,19 +222,19 @@ ul {
 }
 
 .portfolio .project-description a {
-  text-transform: uppercase;
-  padding: 15px;
   border: 2px solid #fff;
   border-radius: 12px;
-  margin: 0 auto;
   color: #fff;
-  text-decoration: none;
+  margin: 0 auto;
   margin-top: 10px;
+  padding: 15px;
+  text-decoration: none;
+  text-transform: uppercase;
 }
 
 .portfolio .project-description a:hover {
-  color: #ffdab3;
   border-color: #ffdab3;
+  color: #ffdab3;
 }
 
 /** Services Page **/
@@ -243,41 +245,47 @@ ul {
 }
 
 .services #sql {
-  max-width: 250px;
   height: auto;
+  max-width: 250px;
 }
 
 .services #php {
-  max-width: 220px;
   height: auto;
+  max-width: 220px;
 }
 
 .services .service-offered {
-  width: 100%;
-  display: table;
   border-spacing: 10px;
+  display: table;
+  width: 100%;
 }
 
 .services .web-service {
+  border: 2px solid #fff;
+  border-radius: 12px;
   display: table-cell;
+  height: 250px;
   margin-top: 20px;
   margin-right: 20px;
   width: 20%;
-  height: 250px;
-  border: 2px solid #fff;
-  border-radius: 12px;
+}
+
+.services h3, .services p {
+  padding: 0;
 }
 
 .services .web-service h3 {
   font-size: 24px;
-  text-transform: uppercase;
   text-decoration: underline;
+  text-transform: uppercase;
+  margin-top: 10px;
+  margin-bottom: 0;
 }
 
 .services .web-service p {
-  width: 90%;
-  margin-left: 20px;
+  margin: 15px;
   text-align: left;
+  width: 90%;
 }
 
 /** Contact Page **/
@@ -286,9 +294,9 @@ ul {
 }
 
 .contact aside {
+  border-right: 2px solid black;
   float: left;
   max-width: 25%;
-  border-right: 2px solid black;
 }
 
 .contact aside img {
@@ -296,60 +304,77 @@ ul {
 }
 
 .contact aside h1 {
-  margin: 5px 20px;
+  font-size: 125%;
+  margin: 0 20px;
 }
 
 .contact aside h1, .contact aside .social {
   margin-right: 20px;
 }
 
+.contact p {
+  padding: 0 4px;
+  text-align: center;
+}
+
 .contact .my-email {
-  padding: 4px;
+  padding-right: 10px;
 }
 
 .contact aside ul li {
-  list-style: none;
   display: block;
+  list-style: none;
   padding: 4px;
 }
 
 .contact aside ul li a {
-  text-decoration: none;
   color: #ddd;
+  text-decoration: none;
 }
 
 .contact aside ul li a:hover {
-  color: #fff;
+  color: #ffdab3;
 }
 
 .contact .build-a-website {
-  max-width: 75%;
   float: right;
+  max-width: 75%;
 }
 
 .contact .build-a-website p {
   margin: 0 auto;
-  width: 70%;
   padding-bottom: 10px;
+  width: 70%;
 }
 
 .contact input {
   margin-bottom: 15px;
 }
 
-.contact input#name, .contact input#email {
+.contact input#name, .contact input#email, .contact textarea {
+  border: 2px solid #ffdab3;
+  border-radius: 10px 10px 10px;
+  box-sizing: border-box;
+  padding: 5px;
+  outline: none;
   width: 550px;
 }
 
 .contact textarea {
-  width: 550px;
   margin-bottom: 10px;
+  resize: none;
 }
 
 .contact #submit-btn {
+  background-color: #ffdab3;
+  border: 0;
+  border-radius: 10px 10px 10px;
+  cursor: pointer;
   display: block;
+  font-weight: bold;
   margin: 0 auto;
   padding: 10px 40px;
+  text-transform: uppercase;
 }
 
 span.clear {
@@ -389,26 +414,44 @@ footer {
   }
   .portfolio .project-description p {
     display: inline-block;
+    text-align: justify;
+    width: 100%;
+  }
+  .about p {
+    display: inline-block;
+    text-align: justify;
     width: 100%;
   }
 }
 
 @media screen and (max-width: 1180px) {
   /* contact message area gets too close to left and input boxes go below everything*/
+  .welcome-text h1 {
+    font-size: 20px;
+  }
   .contact aside {
-    max-width: 100%;
     border-right: none;
     float: none;
     padding-top: 10px;
+    max-width: 100%;
   }
   .contact img {
     float: left;
+    margin-top: 10px;
   }
   .contact .build-a-website {
-    max-width: 100%;
+    border-bottom: 2px solid black;
     float: none;
     padding-bottom: 30px;
-    border-bottom: 2px solid black;
+    max-width: 100%;
+  }
+  .contact .build-a-website p {
+    margin-bottom: 10px;
+    text-align: justify;
+    width: 90%;
+  }
+  .contact #submit-btn {
+    width: 550px;
   }
 }
 
@@ -420,20 +463,22 @@ footer {
     margin-bottom: 20px;
   }
   .services .service-offered {
-    width: 100%;
     display: inline-block;
+    width: 100%;
   }
   .services .web-service {
     display: inline-block;
+    height: auto;
     margin-right: 0;
-    width: 80%;
-    height: 250px;
+    width: 100%;
   }
   .services .web-service p {
     text-align: center;
   }
-  .contact #submit-btn {
-    width: 60%;
+  .services img {
+    margin: 0 auto;
+    margin-right: 0;
+    margin-bottom: 0;
   }
 }
 
@@ -449,18 +494,27 @@ footer {
     height: 50px;
     width: auto;
   }
-  header .nav {
+  /*header .nav {
+    display: none;
+  }*/
+  .nav li {
     display: none;
   }
+  .nav a.icon {
+    float: right;
+    display: block;
+  }
 
-  .services img {
-    margin: 0 auto;
-    margin-right: 0;
-    margin-bottom: 0;
+
+  .welcome-text h1 {
+    font-size: 18px;
+  }
+  .ptext img {
+    height: 200px;
   }
   .services .web-service {
-    width: 100%;
     height: auto;
+    width: 100%;
   }
   .contact input#name, .contact input#email {
     width: 100%;
@@ -491,12 +545,34 @@ footer {
   .pimg4 {
     background-image: url('./img/charleston_skyline_small.jpg');
   }
-  .contact img {
+  .section {
+    padding: 10px 20px;
+    text-align: justify;
+  }
+  .section h1, h2, h3, a {
+    text-align: center;
+  }
+  .portfolio .first-img {
+    margin-top: 15px;
+  }
+  .services .final-project {
+    margin-bottom: 15px;
+  }
+  .contact aside img {
+    display: block;
     float: none;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .contact ul {
+    text-align: center;
+  }
+  .contact .social li {
+    padding-right: 5px;
   }
   .portfolio .project-description a {
-    width: 80%;
     display: block;
+    width: 80%;
   }
 }
 
@@ -505,11 +581,26 @@ footer {
     background-attachment: scroll;
   }
   .ptext .welcome-text {
-    width: 95%;
     margin-bottom: 60px;
+    width: 95%;
   }
   .ptext .welcome-text h1 {
     font-size: 20px;
+  }
+  .services img {
+    margin: 10px auto;
+    width: 100%;
+  }
+  .services #sql {
+    display: block;
+    margin: 10px auto;
+    margin-bottom: 30px;
+    width: 100%;
+  }
+  .services #php {
+    display: block;
+    margin: 10px auto;
+    width: 100%;
   }
 }
 
@@ -525,33 +616,6 @@ footer {
     font-size: 16px;
   }
   .section {
-    text-align: justify;
-    padding: 10px 20px;
     font-size: 16px;
-  }
-  .section h1, h2, h3, a {
-    text-align: center;
-  }
-  .contact .social li {
-    padding-right: 5px;
-  }
-  .services img {
-    width: 100%;
-    margin: 0 auto;
-  }
-  .services #sql {
-    width: 100%;
-    margin: 0 auto;
-    display: block;
-  }
-  .services #php {
-    width: 100%;
-    margin: 0 auto;
-    display: block;
-  }
-  .contact aside img {
-    width: 100%;
-    margin: 0 auto;
-    display: block;
   }
 }
