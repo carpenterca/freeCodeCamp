@@ -1,0 +1,61 @@
+body {
+  background: url("./img/forest_trail.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  font-family: 'Crimson Text', "Times New Roman", Times, serif;
+  font-size: 20px;
+  letter-spacing: 2px;
+  line-height: 1.4;
+  min-height: 100%;
+  min-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.container-fluid {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 35%;
+  margin: 0 10%;
+  text-align: center;
+}
+
+.quote, .author {
+  text-shadow: 1px 1px black;
+}
+
+.quote {
+  font-size: 1.2em;
+  padding: 6px 0;
+}
+.quote:after {
+  content: ".";
+}
+
+.author {
+  font-size: 1em;
+  font-style: italic;
+  padding-bottom: 10px;
+}
+
+.owl-button img {
+  height: 60px;
+}
+.owl-button:hover {
+  cursor: pointer;
+}
+
+.social-media {
+  display: none;
+  font-size: 1.5em;
+}
+.social-media i {
+  padding: 0 5px;
+}
+.tweet:hover, .tumblr:hover {
+  cursor: pointer;
+}
