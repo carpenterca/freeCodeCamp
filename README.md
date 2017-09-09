@@ -13,7 +13,9 @@ This humble page is the center of experimentation and creativity as my showcase 
 ### Front-End Projects
 
 1. <a href="https://carpenterca.github.io/freeCodeCamp/01-Tribute-Page/" target="_blank">Tribute Page</a></strong> (July 28, 2017)
-2. Personal Portfolio Webpage (In Progress)
+2. <a href="https://carpenterca.github.io/freeCodeCamp/02-Personal-Portfolio/" target="_blank">Personal Portfolio Website</a></strong> (Aug 21, 2017)
+3. <a href="https://carpenterca.github.io/freeCodeCamp/03-Quote-Machine/" target="_blank">Random Quote Machine</a></strong> (Sep 09, 2017)
+4. Local Weather (In Progress)
 
 
 ### License
