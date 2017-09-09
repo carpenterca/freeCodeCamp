@@ -18,7 +18,8 @@ $(document).ready(function() {
 			"There is pleasure in the pathless woods, there is rapture in the lonely shore, there is society where none intrudes, by the deep sea, and music in its roar; I love not Man the less, but Nature more",
 			"Nature has been for me, for as long as I remember, a source of solace, inspiration, adventure, and delight; a home, a teacher, a companion",
 			"Nature gives to every time and season some beauties of its own",
-			"When one loses the deep intimate relationship with nature, then temples, mosques and churches become important"
+			"When one loses the deep intimate relationship with nature, then temples, mosques and churches become important",
+			"We are part of this universe; we are in this universe, but perhaps more important than both of those facts, is that the universe is in us"
 		];
 		var author = [
 			"just-shower-thoughts",
@@ -34,6 +35,7 @@ $(document).ready(function() {
 			"Lorraine Anderson",
 			"Charles Dickens",
 			"Jiddu Krishnamurti"
+			"Neil deGrasse Tyson"
 		];
 
 		var randomNumber = Math.floor(Math.random() * quotes.length);
