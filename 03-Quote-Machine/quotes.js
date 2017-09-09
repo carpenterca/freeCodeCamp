@@ -74,15 +74,15 @@ $(document).ready(function() {
 	$(".tweet").on("click", function() {
 		window.open(
 			"https://twitter.com/intent/tweet?text=" +
-			"\"" + randomQuote + "\"" + " - " + randomAuthor
+			"\"" + encodeURIComponent(randomQuote) + "\"" + " - " + randomAuthor
 			);
 	});
 
 	$(".tumblr").on("click", function() {
 		window.open(
 				"https://www.tumblr.com/widgets/share/tool?posttype=quote&tags=quote," + randomAuthor +
-				"&caption=" +randomAuthor +
-				'&content=' + randomQuote +
+				"&caption=" + randomAuthor +
+				'&content=' + encodeURIComponent(randomQuote) +
 				'&canonicalUrl=https%3A%2F%2Fwww.tumblr.com%2Fbuttons&shareSource=tumblr_share_button'
 			);
 	});
