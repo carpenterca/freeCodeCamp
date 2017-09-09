@@ -1,6 +1,10 @@
-# freeCodeCamp: Build a Tribute Page
+## freeCodeCamp: Build a Tribute Page
 
-## Project #1 from the freeCodeCamp front-end development course
+<https://carpenterca.github.io/freeCodeCamp/01-Tribute-Page/>
+
+![Desktop_Screenshot_1](https://i.imgur.com/OpxL3O4.png)
+
+![Desktop_Screenshot_2](https://i.imgur.com/s3EsFH1.png)
 
 ### Objectives:
 
@@ -11,14 +15,6 @@
   - **User Story:** I can click on a link that will take me to an external website with further information on the topic.
   
 My result was a tribute page to a favorite streamer of mine, Day[9]. 
-
-<https://carpenterca.github.io/freeCodeCamp/01-Tribute-Page/>
-
-A couple screenshots of the desktop product: 
-
-![Desktop_Screenshot_1](https://i.imgur.com/OpxL3O4.png)
-
-![Desktop_Screenshot_2](https://i.imgur.com/s3EsFH1.png)
 
 A lot of the work was put into learning how to make a website responsive.
 Here's a look at how it looks on an iPhone 6: 
