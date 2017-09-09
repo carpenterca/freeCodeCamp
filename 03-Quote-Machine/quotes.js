@@ -34,7 +34,7 @@ $(document).ready(function() {
 			"Lord Byron",
 			"Lorraine Anderson",
 			"Charles Dickens",
-			"Jiddu Krishnamurti"
+			"Jiddu Krishnamurti",
 			"Neil deGrasse Tyson"
 		];
 
