@@ -202,6 +202,55 @@ nav a {
 }
 
 /** Portfolio Page **/
+.portfolio {
+  padding-top: 30px;
+}
+div.portfolio-tab {
+    overflow: hidden;
+    /*border: 1px solid #ccc;*/
+    background-color: #25282c;
+    width: 100%;
+}
+div.portfolio-tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    width: 50%;
+    color: #a09c9c;
+    font-size: 1.4em;
+}
+div.portfolio-tab button:hover {
+    background-color: #ffdab3;
+    color: #282e34;
+}
+div.portfolio-tab button.active {
+    background-color: #282e34;
+    color: #ddd;
+}
+.tabcontent {
+    display: none;
+    -webkit-animation: fadeEffect 1s;
+    animation: fadeEffect 1s;
+}
+.tabcontent.active {
+  display: inherit;
+}
+/* Fade in tabs */
+@-webkit-keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+/* websites tab */
 .project {
   border-bottom: 2px solid black;
   display: inline-block;
@@ -246,6 +295,36 @@ nav a {
 .portfolio .project-description a:hover {
   border-color: #ffdab3;
   color: #ffdab3;
+}
+
+/* misc tab */
+.tile {
+  position: relative;
+  float: left;
+  width: 33.333%;
+  height: 100%;
+  overflow: hidden;
+}
+.photo {
+  opacity: 0.6;
+  vertical-align:bottom; /*remove space under image*/
+  width: 100%;
+  height: 100%;
+  transition: transform .5s ease-out;
+}
+.txt {
+  position: absolute;
+  right: 0;
+  bottom: 35%;
+  left: 0;
+  font-family: Helvetica, sans-serif;
+  font-size: 22px;
+  text-shadow: 1px 1px #2a2727;
+  text-align: center;
+}
+.tiles a {
+  text-decoration: none;
+  color: #ddd;
 }
 
 /** Services Page **/
@@ -498,6 +577,13 @@ footer {
     margin-right: 0;
     margin-bottom: 0;
   }
+  /*adjust projects to display 2 per row*/
+  .tile {
+    float: none;
+    display: inline-block;
+    width: 50%;
+    vertical-align:top;
+  }
 }
 
 @media screen and (max-width: 745px) {
@@ -542,6 +628,10 @@ footer {
     display: inline-block;
     padding-right: 15px;
     padding-bottom: 5px;
+  }
+  /*adjust projects to display 1 per row*/
+  .tile {
+    width: 100%;
   }
 }
 

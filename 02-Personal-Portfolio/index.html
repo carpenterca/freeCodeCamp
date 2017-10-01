@@ -25,40 +25,10 @@
     <meta property="og:url" content="https://carpenterca.github.io/freeCodeCamp/02-Personal-Portfolio/">
 
     <link rel="stylesheet" href="./styles.css" type="text/css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" async>
     <!--Image Credits-->
     <!--Saltwater marsh image by Dale Thorn http://dalethorn.com/Fuji_Xp90_01.html-->
     <!--Pinapple fountain image by Jason Barnette http://www.southeasterntraveler.com/-->
-
-    <!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
-    <script type="text/javascript" src="./jquery-3.2.1.min.js"></script>
-    <script type="text/javascript">
-      jQuery(document).ready(function($) {
-        $('a[href^="#"]').on('click', function(event) {
-          var target = $(this.getAttribute('href'));
-          if( target.length ) {
-            event.preventDefault();
-            $('html, body').stop().animate({scrollTop: target.offset().top}, 1000);
-          }
-        });
-        //mobile menu display
-        $('.handle').on('click', function() {
-          $('nav ul').toggleClass('showing');
-        });
-        $('nav a').on('click', function() {
-          if( $('nav ul').hasClass('showing') ) {
-            $('nav ul').toggleClass('showing');
-          }
-        });
-        //prevent form page refresh
-        $(".client-request").submit(function (e) {
-          e.preventDefault();
-          document.getElementById("submit-btn").disabled = true;
-          document.getElementById("form-status").innerHTML = 'Thank you ' + document.getElementById("name").value + '! I will get back to you as soon as possible.';
-          $('#submit-btn').css('cursor', 'default');
-        });
-      });
-    </script>
   </head>
 
   <body>
@@ -106,7 +76,12 @@
     </div>
 
     <a id="portfolio" class="smooth"></a>
+    <div class="portfolio-tab">
+      <button class="tablinks active" onclick="showContent(event, 'projects')">Websites</button>
+      <button class="tablinks" onclick="showContent(event, 'misc')">Projects</button>
+    </div>
     <section class="section portfolio">
+      <div id="projects" class="tabcontent active">
       <div class="project">
         <div class="project-image first-img">
           <img src="./img/website_view_day9.png" alt="Day9 Tribute Website">
@@ -137,6 +112,14 @@
           <a class="view-website-button" href="#" target="_blank">View the Site</a>
         </div>
       </div>
+    </div>
+    <div id="misc" class="tabcontent tiles">
+      <a class="img-link" href="https://carpenterca.github.io/freeCodeCamp/03-Quote-Machine/" target="_blank"><div class="tile">
+        <img class="photo" src="./img/projects/Quote_Screenshot_small.png" alt="Random Quote Website"><span class="txt">Nature Quote Generator</span>
+      </div></a><a class="img-link" href="https://codepen.io/carpenterca/full/zdqpGN/" target="_blank"><div class="tile">
+        <img class="photo" src="./img/projects/typing_text_screenshot_small.png" alt="Typing Text Website"><span class="txt">Typing Text Example</span>
+      </div></a>
+    </div>
     </section>
 
     <div class="pimg3">
@@ -216,5 +199,62 @@ Please send me an email if you'd like to contact me." required></textarea>
       Website created by Cory Carpenter &copy; 2017
     </footer>
 
+    <!--Javascipt-->
+    <!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
+    <script type="text/javascript" src="./jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" defer>
+      jQuery(document).ready(function($) {
+        $('a[href^="#"]').on('click', function(event) {
+          var target = $(this.getAttribute('href'));
+          if( target.length ) {
+            event.preventDefault();
+            $('html, body').stop().animate({scrollTop: target.offset().top-65}, 1000);
+          }
+        });
+        //mobile menu display
+        $('.handle').on('click', function() {
+          $('nav ul').toggleClass('showing');
+        });
+        $('nav a').on('click', function() {
+          if( $('nav ul').hasClass('showing') ) {
+            $('nav ul').toggleClass('showing');
+          }
+        });
+        //prevent form page refresh
+        $(".client-request").submit(function (e) {
+          e.preventDefault();
+          document.getElementById("submit-btn").disabled = true;
+          document.getElementById("form-status").innerHTML = 'Thank you ' + document.getElementById("name").value + '! I will get back to you as soon as possible.';
+          $('#submit-btn').css('cursor', 'default');
+        });
+        //project image effects
+        $('.tile')
+          .on('mouseover', function() {
+            $(this).children('.photo').css({'transform': 'scale(1.1)'});
+            $(this).children('.photo').css({'opacity': '1'});
+          })
+          .on('mouseout', function() {
+            $(this).children('.photo').css({'transform': 'scale(1)'});
+            $(this).children('.photo').css({'opacity': '0.6'});
+          })
+          .on('mousemove', function(e) {
+            $(this).children('.photo').css({'transform-origin': ((e.pageX - $(this).offset().left) / $(this).width()) * 100 + '% ' + ((e.pageY - $(this).offset().top) / $(this).height()) * 100 + '%'});
+          });
+      });
+      //projects tabs function
+      function showContent(evt, content) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(content).style.display = "block";
+        evt.currentTarget.className += " active";
+      }
+    </script>
   </body>
 </html>
