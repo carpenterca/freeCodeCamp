@@ -33,17 +33,14 @@ ul {
   width: 100%;
   z-index: 9999;
 }
-
 .logo {
   background-color: #282e34;
   float: left;
 }
-
 .logo img {
   height: 60px;
   width: auto;
 }
-
 nav ul {
   background-color: #282e34;
   color: #ddd;
@@ -58,23 +55,19 @@ nav ul {
   -o-transition: max-height 0.4s;
   transition: max-height 0.4s;
 }
-
 nav ul li {
   display: inline-block;
   padding: 20px;
 }
-
 nav ul li:hover {
   background-color: #ffdab3;
   color: black;
   transition: all 0.4s;
 }
-
 nav a {
   color: inherit;
   text-decoration: none;
 }
-
 .handle {
   background: #282e34;
   box-sizing: border-box;
@@ -85,7 +78,6 @@ nav a {
   padding: 5px 10px;
   width: 100%;
 }
-
 .handle button {
   background: #282e34;
   color: #ddd;
@@ -105,27 +97,22 @@ nav a {
   opacity: 0.90;
   position: relative;
 }
-
 .pimg1 {
   background-image: url('./img/mtpleasant_salt_marsh.jpg');
   min-height: 100%;
 }
-
 .pimg2 {
   background-image: url('./img/sweet_tea.jpg');
   min-height: 300px;
 }
-
 .pimg3 {
   background-image: url('./img/pinapple_fountain_charleston.jpg');
   min-height: 400px;
 }
-
 .pimg4 {
   background-image: url('./img/charleston_skyline.jpg');
   min-height: 400px;
 }
-
 .ptext {
   color: #ddd;
   font-size: 27px;
@@ -137,14 +124,12 @@ nav a {
   top: 50%;
   width: 100%;
 }
-
 .ptext .border {
   background-color: #111;
   border-radius: 30px;
   color: #fff;
   padding: 20px;
 }
-
 .ptext .border.trans {
   background-color: transparent;
 }
@@ -154,25 +139,20 @@ nav a {
   top: 15%;
   text-shadow: none;
 }
-
 .ptext img {
   height: 250px;
 }
-
 .ptext.welcome-logo {
   width: 100%;
 }
-
 .ptext .welcome-text {
   margin: 0 auto;
   margin-bottom: 40px;
   width: 55%;
 }
-
 .ptext h1 {
   font-size: 27px;
 }
-
 .ptext .btn a {
   border: 2px solid #fff;
   border-radius: 12px;
@@ -184,7 +164,6 @@ nav a {
   text-transform: uppercase;
   max-width: 20%;
 }
-
 .ptext .btn a:hover {
   border-color: #ffdab3;
   color: #ffdab3;
@@ -194,7 +173,6 @@ nav a {
 .about h2 {
   font-size: 27px;
 }
-
 .about p {
   margin: 0 auto;
   padding-bottom: 20px;
@@ -207,7 +185,6 @@ nav a {
 }
 div.portfolio-tab {
     overflow: hidden;
-    /*border: 1px solid #ccc;*/
     background-color: #25282c;
     width: 100%;
 }
@@ -239,12 +216,10 @@ div.portfolio-tab button.active {
 .tabcontent.active {
   display: inherit;
 }
-/* Fade in tabs */
 @-webkit-keyframes fadeEffect {
     from {opacity: 0;}
     to {opacity: 1;}
 }
-
 @keyframes fadeEffect {
     from {opacity: 0;}
     to {opacity: 1;}
@@ -258,13 +233,11 @@ div.portfolio-tab button.active {
   padding-bottom: 30px;
   width: 100%;
 }
-
 .project.last-child {
   border-bottom: none;
   margin-bottom: 0;
   padding-bottom: 10px;
 }
-
 .portfolio .project-image img {
   max-width: 500px;
 }
@@ -272,15 +245,12 @@ div.portfolio-tab button.active {
   float: left;
   margin-top: 20px;
 }
-
 .portfolio .project-description {
   margin-top: 20px;
 }
-
 .portfolio .project-description p {
   margin-bottom: 30px;
 }
-
 .portfolio .project-description a {
   border: 2px solid #fff;
   border-radius: 12px;
@@ -291,7 +261,6 @@ div.portfolio-tab button.active {
   text-decoration: none;
   text-transform: uppercase;
 }
-
 .portfolio .project-description a:hover {
   border-color: #ffdab3;
   color: #ffdab3;
@@ -307,7 +276,7 @@ div.portfolio-tab button.active {
 }
 .photo {
   opacity: 0.6;
-  vertical-align:bottom; /*remove space under image*/
+  vertical-align: bottom; /*remove space under image*/
   width: 100%;
   height: 100%;
   transition: transform .5s ease-out;
@@ -333,23 +302,19 @@ div.portfolio-tab button.active {
   margin-right: 100px;
   margin-bottom: 20px;
 }
-
 .services #sql {
   height: auto;
   max-width: 250px;
 }
-
 .services #php {
   height: auto;
   max-width: 220px;
 }
-
 .services .service-offered {
   border-spacing: 10px;
   display: table;
   width: 100%;
 }
-
 .services .web-service {
   border: 2px solid #fff;
   border-radius: 12px;
@@ -359,11 +324,9 @@ div.portfolio-tab button.active {
   margin-right: 20px;
   width: 20%;
 }
-
 .services h3, .services p {
   padding: 0;
 }
-
 .services .web-service h3 {
   font-size: 24px;
   text-decoration: underline;
@@ -371,7 +334,6 @@ div.portfolio-tab button.active {
   margin-top: 10px;
   margin-bottom: 0;
 }
-
 .services .web-service p {
   margin: 10px;
   margin-left: 20px;
@@ -383,17 +345,14 @@ div.portfolio-tab button.active {
 .contact {
   overflow: hidden;
 }
-
 .contact aside {
   border-right: 2px solid black;
   float: left;
   max-width: 25%;
 }
-
 .contact aside img {
   max-width: 200px;
 }
-
 .contact aside h1 {
   font-size: 125%;
   margin: 0 20px;
@@ -402,46 +361,37 @@ div.portfolio-tab button.active {
 .contact aside h1, .contact aside .social {
   margin-right: 20px;
 }
-
 .contact p {
   padding: 0 4px;
   text-align: center;
 }
-
 .contact .my-email {
   padding-right: 10px;
 }
-
 .contact aside ul li {
   display: block;
   list-style: none;
   padding: 4px;
 }
-
 .contact aside ul li a {
   color: #ddd;
   text-decoration: none;
 }
-
 .contact aside ul li a:hover {
   color: #ffdab3;
 }
-
 .contact .build-a-website {
   float: right;
   max-width: 75%;
 }
-
 .contact .build-a-website p {
   margin: 0 auto;
   padding-bottom: 10px;
   width: 70%;
 }
-
 .contact input {
   margin-bottom: 15px;
 }
-
 .contact input#name, .contact input#email, .contact textarea {
   border: 2px solid #ffdab3;
   border-radius: 10px 10px 10px;
@@ -450,12 +400,10 @@ div.portfolio-tab button.active {
   outline: none;
   width: 550px;
 }
-
 .contact textarea {
   margin-bottom: 10px;
   resize: none;
 }
-
 .contact #submit-btn {
   background-color: #ffdab3;
   border: 0;
@@ -467,7 +415,6 @@ div.portfolio-tab button.active {
   padding: 10px 40px;
   text-transform: uppercase;
 }
-
 .contact #form-status {
   color: #ddd;
   font-size: 14px;
@@ -484,6 +431,9 @@ footer {
   background-color: black;
   padding: 20px;
   text-align: center;
+}
+footer a {
+  color: #ddd;
 }
 
 
@@ -582,7 +532,7 @@ footer {
     float: none;
     display: inline-block;
     width: 50%;
-    vertical-align:top;
+    vertical-align: top;
   }
 }
 
