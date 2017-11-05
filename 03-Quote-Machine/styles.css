@@ -59,3 +59,13 @@ body {
 .tweet:hover, .tumblr:hover {
   cursor: pointer;
 }
+
+@media screen and (max-width: 625px) {
+  body {
+    background: url("./img/forest_trail_small.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}

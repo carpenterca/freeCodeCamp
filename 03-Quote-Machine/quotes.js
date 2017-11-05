@@ -41,7 +41,8 @@ $(document).ready(function() {
 		var randomNumber = Math.floor(Math.random() * quotes.length);
 
 		//don't allow for quotes to be repeated
-		while (previousQuote == randomNumber || quotesUsed.includes(randomNumber)) {
+		//IE11 does not support "quotesUsed.includes(randomNumber)"
+		while (previousQuote == randomNumber || quotesUsed.indexOf(randomNumber) != -1) {
 			randomNumber = Math.floor(Math.random() * quotes.length);
 		}
 		//keep track of quotes used
