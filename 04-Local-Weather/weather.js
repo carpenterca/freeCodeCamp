@@ -160,7 +160,7 @@ function getLocalWeatherForcast(latitude, longitude) {
 
 function getMarsWeather() {
   $.ajax({
-    url: "http://marsweather.ingenology.com/v1/latest/?format=jsonp",
+    url: "https://marsweather.ingenology.com/v1/latest/?format=jsonp",
     crossOrigin: true,
     type: 'GET',
     dataType: "jsonp",
