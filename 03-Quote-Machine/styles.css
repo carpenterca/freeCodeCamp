@@ -60,7 +60,7 @@ body {
   cursor: pointer;
 }
 
-@media screen and (max-width: 625px) {
+@media screen and (max-width: 780px) {
   body {
     background: url("./img/forest_trail_small.jpg");
     background-attachment: fixed;
