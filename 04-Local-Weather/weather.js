@@ -31,12 +31,12 @@ var dataReceived = 0;
 var currentUnit = "imperial";
 
 const bgImages = ["clear_skys.jpg", "clear_night.jpg", "cloudy_mountains.jpg", "clouds_night.jpg", "rain.jpg", "rain_night.jpg",
-                  "thunderstorm.jpg", "thunderstorm_night.jpg", "snow_lake.jpg", "snow_night.jpg", "fog.jpg", "hurricane.jpg", "mars_landscape.jpg"];
+                  "thunderstorm.jpg", "snow.jpg", "snow_night.jpg", "fog.jpg", "hurricane.jpg", "mars_landscape.jpg"];
 const imgPath = "./img/";
 var bgImage = "earth_from_space.jpg";
 var weatherCode = 0;
 
-function init() {
+function initWeather() {
   //Pre-load bgImages
   for (let i = 0; i < bgImages.length; ++i) {
       const img = new Image();
@@ -79,7 +79,6 @@ function getGeolocation() {
       latitude = (position.coords.latitude).toFixed(6);
       longitude = (position.coords.longitude).toFixed(6);
       getLocalWeather(latitude, longitude);
-      //updateBackgroundImage();
     });
   }
 }
@@ -148,19 +147,23 @@ function displayEarthWeather(jsonData) {
 
     // set background image based on weather condition
     doWeatherCondition(weatherCode);
+    updateBackgroundImage();
 }
 
 function getLocalWeatherForcast(latitude, longitude) {
   //https://home.openweathermap.org/
-  /*var appid = "aef99c1bd5fac45719e91ef3f8ac4eee";
+  /*var appid = "";
   var urlWeather = "api.openweathermap.org/data/2.5/weather?lat=" + latitude + "&lon=" + longitude + "&appid=" + appid;
   var urlForcast = "api.openweathermap.org/data/2.5/forecast?lat=" + latitude + "&lon=" + longitude + "&appid=" + appid;
 */
 }
 
 function getMarsWeather() {
+  // Use this call for locally run apps only.
+  // CORS header ‘Access-Control-Allow-Origin’ are missing for this site,
+  // and must use a backend server to get data on a live site.
   $.ajax({
-    url: "https://marsweather.ingenology.com/v1/latest/?format=jsonp",
+    url: "http://marsweather.ingenology.com/v1/latest/?format=jsonp",
     crossOrigin: true,
     type: 'GET',
     dataType: "jsonp",
@@ -168,6 +171,21 @@ function getMarsWeather() {
     accept: 'application/json',
     jsonpCallback: "displayMarsWeather"
   });
+
+  // Use this call on your own server to bypass CORS header
+  // mars data from http://marsweather.ingenology.com/v1/latest/
+  /*$.ajax({
+      url:'maas-utility.php',
+      complete: function (response) {
+          let jsonObject = JSON.parse(response.responseText);
+          console.log(jsonObject);
+          displayMarsWeather(jsonObject);
+      },
+      error: function () {
+          console.log("An error occurred obtaining the data.");
+      }
+  });
+  return false;*/
 }
 
 function displayMarsWeather(jsonData) {
@@ -299,14 +317,6 @@ function startTime() {
   let minutes = today.getMinutes();
   let seconds = today.getSeconds();
 
-  // add a zero in front of numbers<10
-  minutes = checkTime(minutes);
-  seconds = checkTime(seconds);
-
-  // convert day to string
-  day = checkDay(day);
-  document.getElementById('time').innerHTML = hours + ":" + minutes + ":" + seconds + " (" + day + ")";
-
   //Determine if there is sunlight or not based on sunset time
   if(hours >= sunRisehour && minutes >= sunRiseMin && hours < sunSetHour) {
     timeOfDay = "day";
@@ -315,6 +325,14 @@ function startTime() {
   } else {
     timeOfDay = "day";
   }
+
+  // add a zero in front of numbers<10
+  minutes = checkTime(minutes);
+  seconds = checkTime(seconds);
+
+  // convert day to string
+  day = checkDay(day);
+  document.getElementById('time').innerHTML = hours + ":" + minutes + ":" + seconds + " (" + day + ")";
 
   // timer to update clock and check for change in daylight
   t = setTimeout(function() {
@@ -362,7 +380,7 @@ function doWeatherCondition(weatherCode) {
       if (timeOfDay === "day") {
         bgImage = "thunderstorm.jpg";
       } else {
-        bgImage = "thunderstorm_night.jpg";
+        bgImage = "thunderstorm.jpg";
       }
       break;
     case (weatherCode < 330): //Drizzle
@@ -377,7 +395,7 @@ function doWeatherCondition(weatherCode) {
       break;
     case (weatherCode < 630): //Snow
       if (timeOfDay === "day") {
-        bgImage = "snow_lake.jpg";
+        bgImage = "snow.jpg";
       } else {
         bgImage = "snow_night.jpg";
       }
@@ -425,7 +443,6 @@ function updateBackgroundImage() {
         $("#earth").removeClass("view-left");
     } else {
       bgImage = "earth_from_space.jpg";
-      $("#earth").removeClass("view-active");
       $("#earth").addClass("view-left");
       $('.view-left').css("background-image", "url('" + imgPath + bgImage + "')"); //Why is it required to update background-image for element to update
     }
@@ -434,45 +451,30 @@ function updateBackgroundImage() {
 function expandView(e) {
   const worldSelectEarth = document.getElementById("earth");
   const worldSelectMars = document.getElementById("mars");
-  const mq825 = window.matchMedia( "(min-width: 825px)" );
-  //const mq530 = window.matchMedia( "(min-width: 530px)" );
+  const mq1000 = window.matchMedia( "(min-width: 1000px)" );
   switch (e.target.id) {
     case "earth-title":
     case "earth-title1":
     case "earth-title2":
     case "earth":
       //remove mars view
-      worldSelectMars.style.display = 'none';
+      worldSelectMars.className = 'view-unfocused';
 
-      //expand focus on earth view
-      //worldSelectEarth.style.width = '90%'; //using outside the if statement does not allow for percent to change in reduceWidth
-      //worldSelectEarth.style.left = '4%';
-      // expand height for mobile or desktop versions
-      if (mq825.matches) {
-        // window width is at least 825px
-        this.style.width = '90%';
-        this.style.left = '4%';
+      //select desktop or mobile views
+      if (mq1000.matches) {
+        worldSelectEarth.className = 'view view-focus-desktop';
       } else {
-        // window width is less than 825px
-        worldSelectEarth.style.height = '100vh';
-        this.style.width = '100%';
-        this.style.transform = 'translateY(0)';
-        this.style.border = 'none';
+        worldSelectEarth.className = 'view view-focus-mobile';
       }
-      /*if (mq530.matches) {
-        worldSelectEarth.style.height = '90vh';
-      }*/
-      worldSelectEarth.style.cursor = 'default';
 
       //add elements for view
       this.getElementsByClassName("title")[0].style.display = 'none';
       this.getElementsByClassName("back-btn")[0].style.display = 'inline-block';
       document.getElementById("current-location").style.display = 'inline-block';
       document.getElementById("toggle").style.display = 'inline-block';
-      document.getElementById("earth-weather").style.display = 'inline-block';
+      document.getElementById("earth-weather").style.display = 'block';
 
       //add classes and apply background
-      this.classList.add("view-active");
       this.classList.add("view-left-active");
       updateBackgroundImage();
       break;
@@ -481,45 +483,34 @@ function expandView(e) {
     case "mars-title2":
     case "mars":
       //remove earth view
-      worldSelectEarth.style.display = 'none';
+      worldSelectEarth.className = 'view-unfocused';
 
-      //expand focus on mars view
-      //this.style.width = '90%';
-      //this.style.left = '4%';
-      // expand height for mobile or desktop versions
-      if (mq825.matches) {
-        // window width is at least 825px
-        this.style.width = '90%';
-        this.style.left = '4%';
+      //select desktop or mobile views
+      if (mq1000.matches) {
+        worldSelectMars.className = 'view view-focus-desktop';
       } else {
-        // window width is less than 825px
-        worldSelectMars.style.height = '100vh';
-        this.style.width = '100%';
-        this.style.transform = 'translateY(0)';
-        this.style.border = 'none';
+        worldSelectMars.className = 'view view-focus-mobile';
       }
-      this.style.cursor = 'default';
 
       //add elements for mars view
       this.getElementsByClassName("title")[0].style.display = 'none';
       this.getElementsByClassName("back-btn")[0].style.display = 'inline-block';
       document.getElementById("toggle-mars").style.display = 'inline-block';
-      document.getElementById("mars-weather").style.display = 'inline-block';
+      document.getElementById("mars-weather").style.display = 'block';
 
       //add classes and apply background
-      this.classList.add("view-active");
-      this.style.backgroundImage = "url('./img/mars_landscape.jpg')";
+      this.classList.add("view-right-active");
+      //this.style.backgroundImage = "url('./img/mars_landscape.jpg')";
       break;
     default:
-      //console.log("Error occured when switching view!");
+      //console.log("Error occurred when switching view!");
   }
 }
 
 function reduceView(e) {
   const worldSelectEarth = document.getElementById("earth");
   const worldSelectMars = document.getElementById("mars");
-  const mq825 = window.matchMedia( "(min-width: 825px)" );
-  //const mq530 = window.matchMedia( "(min-width: 530px)" );
+  const mq1000 = window.matchMedia( "(min-width: 1000px)" );
   let parentElement = this.parentNode;
   switch (parentElement.id) {
     case "earth":
@@ -531,26 +522,21 @@ function reduceView(e) {
 
       //add elements for home view
       parentElement.getElementsByClassName("title")[0].style.display = 'block';
-      // return width for mobile or desktop versions
-      if (mq825.matches) {
-        // window width is at least 825px
-        worldSelectEarth.style.width = '48%'; //parentElement.style.width = '48%'; //width does not change without expandWidth location change
+
+      worldSelectEarth.className = 'view view-left';
+      worldSelectMars.className = 'view view-right';
+
+      worldSelectMars.classList.remove("view-unfocused");
+
+      //select desktop or mobile views
+      if (mq1000.matches) {
+        worldSelectEarth.classList.remove("view-focus-desktop");
       } else {
-        // window width is less than 825px
-        worldSelectEarth.style.width = '100%';
-        worldSelectEarth.style.height = '47vh';
-        worldSelectEarth.style.transform = 'translateY(5%)';
+        worldSelectEarth.classList.remove("view-focus-mobile");
       }
-      /*if (mq530.matches) {
-        worldSelectEarth.style.width = '100%';
-      }*/
-      //worldSelectEarth.style.width = '48%'; //parentElement.style.width = '48%'; //width does not change without expandWidth location change
-      worldSelectEarth.style.left = '0';
-      worldSelectEarth.style.cursor = 'pointer';
 
       //view home view, remove classes, and update background
-      worldSelectMars.style.display = 'inline-block';
-      parentElement.classList.remove("view-left-active"); //remove active before updating the background image
+      worldSelectEarth.classList.remove("view-left-active"); //remove active before updating the background image
       updateBackgroundImage();
       break;
     case "mars":
@@ -562,30 +548,23 @@ function reduceView(e) {
       //add elements for home view
       parentElement.getElementsByClassName("title")[0].style.display = 'block';
       //return width to mobile or desktop versions
-      if (mq825.matches) {
-        // window width is at least 825px
-        worldSelectMars.style.width = '48%';
-        parentElement.style.left = '50%';
-      } else {
-        // window width is less than 825px
-        worldSelectMars.style.width = '100%';
-        parentElement.style.left = '0';
-        worldSelectMars.style.height = '47vh';
-        parentElement.style.transform = 'translateY(5%)';
-      }
-      /*if (mq530.matches) {
-        worldSelectMars.style.width = '100%';
-      }*/
-      //worldSelectMars.style.width = '48%';
-      //parentElement.style.left = '50%';
-      parentElement.style.cursor = 'pointer';
 
-      //view home view, remove classes, and update background
-      worldSelectEarth.style.display = 'inline-block';
-      parentElement.classList.remove("view-active");
-      parentElement.style.backgroundImage = "url('./img/mars_from_space.jpg')";
+      worldSelectMars.className = 'view view-right';
+      worldSelectEarth.className = 'view view-left';
+
+      worldSelectEarth.classList.remove("view-unfocused");
+
+      //select desktop or mobile views
+      if (mq1000.matches) {
+        worldSelectMars.classList.remove("view-focus-desktop");
+      } else {
+        worldSelectMars.classList.remove("view-focus-mobile");
+      }
+
+      //parentElement.style.backgroundImage = "url('./img/mars_from_space.jpg')";
+      worldSelectMars.classList.remove("view-right-active");
       break;
     default:
-      console.log("Error occured when returning to home view!");
+      console.log("Error occurred when returning to home view!");
   }
 }
