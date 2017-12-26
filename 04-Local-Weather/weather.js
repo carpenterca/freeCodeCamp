@@ -52,17 +52,54 @@ function initWeather() {
     back_buttons[i].addEventListener("click", reduceView);
   }
   //Set up view unit conversion toggle
-  $(".toggle").on("click", (e) => {
+  // earth toggle
+  $("#toggle").on("click", function (e) {
       if($(e.target).hasClass("imperial")) {
           toggleUnits("metric");
           currentUnit = "metric";
+          $("#mars-toggle").prop("checked", true);
+          toggleUnitsMars(currentUnit);
+          document.getElementById("mars-toggle").classList.remove("imperial");
+          document.getElementById("mars-toggle").classList.add("metric");
       } else {
           toggleUnits("imperial");
           currentUnit = "imperial";
+          $("#mars-toggle").prop("checked", false);
+          toggleUnitsMars(currentUnit);
+          document.getElementById("mars-toggle").classList.remove("metric");
+          document.getElementById("mars-toggle").classList.add("imperial");
       }
+
       $(e.target).toggleClass("imperial");
       $(e.target).toggleClass("metric");
+
+      //$("#mars-toggle").toggleClass("imperial");
+      //$("#mars-toggle").toggleClass("metric");
     });
+    // mars toggle
+    $("#mars-toggle").on("click", function (e) {
+        if($(e.target).hasClass("imperial")) {
+            toggleUnitsMars("metric");
+            currentUnit = "metric";
+            $("#earth-toggle").prop("checked", true);
+            toggleUnits(currentUnit);
+            document.getElementById("earth-toggle").classList.remove("imperial");
+            document.getElementById("earth-toggle").classList.add("metric");
+        } else {
+            toggleUnitsMars("imperial");
+            currentUnit = "imperial";
+            $("#earth-toggle").prop("checked", false);
+            toggleUnits(currentUnit);
+            document.getElementById("earth-toggle").classList.remove("metric");
+            document.getElementById("earth-toggle").classList.add("imperial");
+        }
+
+        $(e.target).toggleClass("imperial");
+        $(e.target).toggleClass("metric");
+
+        //$("#earth-toggle").toggleClass("imperial");
+        //$("#earth-toggle").toggleClass("metric");
+      });
 
     //Set up button to get user location
     $("#current-location").on("click", getGeolocation);
@@ -202,7 +239,7 @@ function displayMarsWeather(jsonData) {
   dataReceived = jsonData.report.terrestrial_date;
 
   //Make conversions and display them
-  toggleUnits(currentUnit);
+  toggleUnitsMars(currentUnit);
 
   //Display remaining elements
   document.getElementById("current-season-mars").innerHTML = marsMonth + ",";
@@ -231,22 +268,24 @@ function convertWindToMiles(meters) {
 
 function toggleUnits(unit) {
   if(unit === "imperial") {
-    //Earth
     document.getElementById("temperature").innerHTML = convertCtoF(temperature) + "&degF";
     document.getElementById("maxtemp").innerHTML = convertCtoF(tempMax) + "&deg";
     document.getElementById("mintemp").innerHTML = convertCtoF(tempMin) + "&deg";
     document.getElementById("wind").innerHTML = convertWindToMiles(windSpeed) + " mph " + windDirection(windDir);
-    //Mars
-    document.getElementById("avg-temp-mars").innerHTML = convertCtoF(temperatureAvg) + "&degF";
-    document.getElementById("max-temp-mars").innerHTML = convertCtoF(temperatureMax) + "&deg";
-    document.getElementById("min-temp-mars").innerHTML = convertCtoF(temperatureMin) + "&deg";
   } else if (unit === "metric") {
-    //Earth
     document.getElementById("temperature").innerHTML = temperature.toFixed() + "&degC";
     document.getElementById("maxtemp").innerHTML = tempMax + "&deg";
     document.getElementById("mintemp").innerHTML = tempMin + "&deg";
     document.getElementById("wind").innerHTML = windSpeed + " m/s " + windDirection(windDir);
-    //Mars
+  }
+}
+
+function toggleUnitsMars(unit) {
+  if(unit === "imperial") {
+    document.getElementById("avg-temp-mars").innerHTML = convertCtoF(temperatureAvg) + "&degF";
+    document.getElementById("max-temp-mars").innerHTML = convertCtoF(temperatureMax) + "&deg";
+    document.getElementById("min-temp-mars").innerHTML = convertCtoF(temperatureMin) + "&deg";
+  } else if (unit === "metric") {
     document.getElementById("avg-temp-mars").innerHTML = temperatureAvg + "&degC";
     document.getElementById("max-temp-mars").innerHTML = temperatureMax + "&deg";
     document.getElementById("min-temp-mars").innerHTML = temperatureMin + "&deg";
