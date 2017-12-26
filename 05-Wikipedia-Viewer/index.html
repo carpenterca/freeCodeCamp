@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Cory Carpenter">
+    <meta name="description" content="Search Wikipedia in this futuristic themed wiki viewer.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Wiki Viewer</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+    <link rel="manifest" href="./favicon/manifest.json">
+    <link rel="mask-icon" href="./favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="./favicon/favicon.ico">
+    <meta name="msapplication-config" content="./favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <!--twitter-->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@Owlluin">
+    <meta name="twitter:creator" content="@Owlluin">
+    <meta name="twitter:title" content="Wiki Viewer">
+    <meta name="twitter:description" content="Search Wikipedia in this futuristic themed wiki viewer.">
+    <meta name="twitter:image" content="https://carpentercacsci.files.wordpress.com/2017/12/wiki_viewer_search1.jpg">
+    <!--facebook-->
+    <meta property="og:title" content="Wiki Viewer" />
+    <meta property="og:image" content="https://carpentercacsci.files.wordpress.com/2017/12/wiki_viewer_search1.jpg" />
+    <meta property="og:description" content="Search Wikipedia in this futuristic themed wiki viewer." />
+    <meta property="og:url" content="https://www.lowcountrywebdevelopment.com/wiki-viewer/">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" async>
+    <link rel="stylesheet" href="./styles.css" type="text/css">
+  </head>
+  <body>
+    <div id="user-input" class="home">
+      <h1><a id="title" href="./index.html"><span class="fa fa-book"></span>Wikipedia Viewer</a></h1>
+      <div id="search-form">
+        <input id="search" type="text" name="wikiSearch" placeholder="Today's Research?">
+        <a class="fa fa-search" onclick="searchWiki()"></a>
+        <h4><a id="random" href="https://en.wikipedia.org/wiki/Special:Random" target="_blank">Show me anything!</a></h4>
+      </div>
+    </div>
+    <div id="results"></div>
+
+    <script type="text/javascript" src="./jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="./wiki.js"></script>
+    <script type="text/javascript">
+      $(function() {
+        $('#search').keypress(function(e) {
+          // Enter pressed?
+          if(e.which == 10 || e.which == 13) {
+            searchWiki();
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
