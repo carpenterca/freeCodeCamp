@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Twitch Viewer</title>
+    <!--icon-->
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+    <link rel="manifest" href="./favicon/manifest.json">
+    <link rel="mask-icon" href="./favicon/safari-pinned-tab.svg" color="#6938b1">
+    <link rel="shortcut icon" href="./favicon/favicon.ico">
+    <meta name="msapplication-config" content="./favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <!--twitter-->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@Owlluin">
+    <meta name="twitter:creator" content="@Owlluin">
+    <meta name="twitter:title" content="Twitch Viewer">
+    <meta name="twitter:description" content="See if some of my favorite streamers are online.">
+    <meta name="twitter:image" content="https://carpentercacsci.files.wordpress.com/2017/12/twitch_viewer.jpg">
+    <!--facebook-->
+    <meta property="og:title" content="Twitch Viewer" />
+    <meta property="og:image" content="https://carpentercacsci.files.wordpress.com/2017/12/twitch_viewer.jpg" />
+    <meta property="og:description" content="See if some of my favorite streamers are online." />
+    <meta property="og:url" content="https://www.lowcountrywebdevelopment.com/twitch-viewer/">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" async>
+    <link rel="stylesheet" href="./styles.css" type="text/css">
+  </head>
+  <body>
+    <div id="search-form">
+      <h3 id="search-title"><a class="btn" onclick="initStreamHome()">Twitch Streams</a></h3>
+      <input id="search" type="text" name="streamerSearch" placeholder="Search for any streamer">
+      <a class="fa fa-search" onclick="searchStreamer()"></a>
+      <div id="filter-btns"><a class="filter-btn" onclick="showAllStreams()">All</a>&nbsp;|&nbsp;<a class="filter-btn" onclick="showOnlineStreams()">Online</a>&nbsp;|&nbsp;<a class="filter-btn" onclick="showOfflineStreams()"> Offline</a></div>
+      <!--<a id="random-search-btn" href="http://www.twitch.tv/directory/random" target="_blank" onclick="">Random Stream</a>-->
+    </div>
+    <h1 id="page-title">Owlluin's Picks</h1>
+    <h2 id="error-info"></h2>
+    <div id="streamers">
+      <h2 id="online-title" class="online-status">Live:</h2>
+      <div id="online-streamers"></div>
+      <h2 id="offline-title" class="online-status">Offline:</h2>
+      <div id="offline-streamers"></div>
+    </div>
+
+    <script type="text/javascript" src="./jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="./twitchtv.js"></script>
+    <script type="text/javascript">
+      $(function() {
+        $('#search').keypress(function(e) {
+          // Enter pressed?
+          if(e.which == 10 || e.which == 13) {
+            searchStreamer();
+          }
+        });
+        initStreamHome();
+      });
+    </script>
+  </body>
+</html>
