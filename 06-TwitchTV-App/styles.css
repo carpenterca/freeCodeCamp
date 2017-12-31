@@ -135,12 +135,13 @@ html, body {
 .streamer-name {
   font-size: 1.100em;
   text-shadow: 2px 3px 9px black;
-  margin-bottom: 10px;
+  margin: 10px auto;
 }
 .streamer-status { /* online or offline */
   font-size: 0.750em;
   text-shadow: 2px 3px 9px black;
   margin-top: 0;
+  margin-bottom: 8px;
 }
 .streamer-playing {
 
@@ -180,7 +181,35 @@ p.stream-views {
 }
 
 /** Media Queries **/
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 600px) and (max-width: 789px) {
+  .stream-link-top {
+    text-decoration: none;
+  }
+  .standard-view-text {
+    float: none;
+    width: 100%;
+    text-align: center;
+  }
+  .streamer-name {
+    font-size: 1.200em;
+    margin: 0;
+    padding-top: 10px;
+  }
+  .streamer-status {
+    font-size: 0.850em;
+  }
+  .stream-preview-img {
+    max-width: 500px;
+    width: 100%;
+  }
+}
+@media screen and (min-width: 790px) {
+  #search-title {
+    font-size: 1.400em;
+  }
+  #search {
+    width: 40%;
+  }
   #streamers {
     /*width: 90%;*/
   }
@@ -202,22 +231,19 @@ p.stream-views {
     max-width: 300px;
     margin: 10px 20px;
     /*margin-bottom: 15px;*/
+    position: relative;
   }
 
   .standard-view {
     width: 100%;
-    /*border-bottom: none;*/ /* was 2px */
     padding-bottom: 12px;
     border-radius: 8px;
     display: inline-block;
     text-align: center;
-    /*padding-bottom: 0;*/
-    /*margin-bottom: 5px;*/
-    /*width: 15%;*/
     padding-bottom: 0;
   }
   .user-img {
-    max-width: 120px;
+    max-width: 110px;
     margin: 0 auto;
     float: none;
   }
@@ -227,15 +253,18 @@ p.stream-views {
   .streamer-name {
     font-size: 1.400em;
   }
+  .stream-link-top {
+
+  }
   .streamer-status {
     font-size: 1.050em;
   }
-
 
   .streamer-playing {
     display: inline-block;
     margin: 0;
     margin: 5px auto;
+    /*min-height: 130px;*/
   }
   .streamer-playing p {
     margin: 5px auto;
@@ -251,16 +280,17 @@ p.stream-views {
     margin-top: 10px;
   }
 
-
   .stream-link {
     display: block;
-    /*width: 30%;*/
   }
   .stream-preview-img {
     max-width: 500px;
-    width: 100%;
-  }
+    width: 97%;
 
+    position: absolute;
+    left: 1%;
+    bottom: 2%;
+  }
 
   .stream-description {
     font-size: 1.000em;
