@@ -1,4 +1,4 @@
-const streamers = ["freecodecamp", "funfunfunction", "day9tv", "kinenz", "boogie2988", "novawar", "lagtvmaximusblack", "technicalalpha", "disguisedtoasths", "trumpsc", "itmejp", "towelliee", "anniefuchsia"];
+var streamers = ["freecodecamp", "funfunfunction", "day9tv", "kinenz", "boogie2988", "novawar", "lagtvmaximusblack", "technicalalpha", "disguisedtoasths", "trumpsc", "itmejp", "towelliee", "anniefuchsia"];
 var liveStreams = []; // if live add to array, if present in offlineStreams then remove from array
 var offlineStreams = [];
 var callsCompleted = 0;
