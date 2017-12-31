@@ -1,9 +1,9 @@
-const streamers = ["wunyu", "Quin69", "Sco", "GingiTV", "imaqtpie", "Faker", "freecodecamp", "funfunfunction", "day9tv", "kinenz", "boogie2988", "novawar", "lagtvmaximusblack", "technicalalpha", "disguisedtoasths", "trumpsc", "itmejp", "towelliee", "asmongold", "anniefuchsia"];
-let liveStreams = []; // if live add to array, if present in offlineStreams then remove from array
-let offlineStreams = [];
-let callsCompleted = 0;
-let currentView = "home";
-let t;
+const streamers = ["freecodecamp", "funfunfunction", "day9tv", "kinenz", "boogie2988", "novawar", "lagtvmaximusblack", "technicalalpha", "disguisedtoasths", "trumpsc", "itmejp", "towelliee", "anniefuchsia"];
+var liveStreams = []; // if live add to array, if present in offlineStreams then remove from array
+var offlineStreams = [];
+var callsCompleted = 0;
+var currentView = "home";
+var t;
 
 function initStreamHome() {
   currentView = "home";
