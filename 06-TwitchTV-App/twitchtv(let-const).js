@@ -1,9 +1,9 @@
-const streamers = ["freecodecamp", "funfunfunction", "day9tv", "kinenz", "boogie2988", "novawar", "lagtvmaximusblack", "technicalalpha", "disguisedtoasths", "trumpsc", "itmejp", "towelliee", "anniefuchsia"];
-let liveStreams = []; // if live add to array, if present in offlineStreams then remove from array
-let offlineStreams = [];
-let callsCompleted = 0;
-let currentView = "home";
-let t;
+var streamers = ["freecodecamp", "funfunfunction", "day9tv", "kinenz", "boogie2988", "novawar", "lagtvmaximusblack", "technicalalpha", "disguisedtoasths", "trumpsc", "itmejp", "towelliee", "anniefuchsia"];
+var liveStreams = []; // if live add to array, if present in offlineStreams then remove from array
+var offlineStreams = [];
+var callsCompvared = 0;
+var currentView = "home";
+var t;
 
 function initStreamHome() {
   currentView = "home";
@@ -12,7 +12,7 @@ function initStreamHome() {
   $("#filter-btns").show();
   showAllStreams();
 
-  for (let i = 0; i < streamers.length; i++) {
+  for (var i = 0; i < streamers.length; i++) {
     getLiveStreamers(streamers[i]);
   }
   // update streams every 5 minutes
@@ -31,9 +31,9 @@ function getLiveStreamers(streamerName) {
   $("div#offline-streamers").html("");
   $("#error-info").hide();
   offlineStreams = [];
-  callsCompleted = 0;
+  callsCompvared = 0;
 
-  let userURL = "https://wind-bow.glitch.me/twitch-api/streams/" + streamerName;
+  var userURL = "https://wind-bow.glitch.me/twitch-api/streams/" + streamerName;
   $.ajax({
     type: 'GET',
     url: userURL,
@@ -49,9 +49,9 @@ function getLiveStreamers(streamerName) {
     error: function(xhr, textStatus, errorThrown) {
       displayCallError();
     },
-    complete: function () {
-      callsCompleted++;
-      if (currentView === "home" && callsCompleted === streamers.length) {
+    compvare: function () {
+      callsCompvared++;
+      if (currentView === "home" && callsCompvared === streamers.length) {
         //console.log(offlineStreams);
         getOfflineStreamers();
       } else if (currentView === "search") {
@@ -63,8 +63,8 @@ function getLiveStreamers(streamerName) {
 }
 
 function getOfflineStreamers() {
-  for (let i = 0; i < offlineStreams.length; i++) {
-    let userURL = "https://wind-bow.glitch.me/twitch-api/users/" + offlineStreams[i];
+  for (var i = 0; i < offlineStreams.length; i++) {
+    var userURL = "https://wind-bow.glitch.me/twitch-api/users/" + offlineStreams[i];
     $.ajax({
       type: 'GET',
       url: userURL,
@@ -83,7 +83,7 @@ function getOfflineStreamers() {
 }
 
 function displayLiveStreamers(jsonData, streamerName) {
-  let timestamp = new Date().toLocaleString();
+  var timestamp = new Date().toLocaleString();
   $("div#online-streamers").append('<div class="streamer" id="' + streamerName + '"></div>');
   $("#" + streamerName).append('<a class="stream-link-top" target="_blank" href="' + jsonData.stream['channel'].url + '"><div class="standard-view" id="standard-view-' + streamerName + '"></div></a>');
   $("#standard-view-" + streamerName).append('<img class="user-img" src="' + jsonData.stream['channel'].logo + '"></img>');
@@ -96,7 +96,7 @@ function displayLiveStreamers(jsonData, streamerName) {
 
   $("#playing-" + streamerName).append('<p class="stream-game" id="game-' + streamerName + '">Playing: ' + jsonData.stream['channel'].game + '</p>');
   // limit stream title to 2 lines
-  let streamTitle = jsonData.stream['channel'].status;
+  var streamTitle = jsonData.stream['channel'].status;
   if (jsonData.stream['channel'].status.length > 69) {
     streamTitle = streamTitle.toString().slice(0, 63) + "...";
   }
@@ -150,7 +150,7 @@ function checkAccountStatus(jsonData) {
   else if (jsonData.status === 422) {
     $("div#online-streamers").html("");
     $("div#offline-streamers").html("");
-    $("#error-info").html("Account has been deleted.").show();
+    $("#error-info").html("Account has been devared.").show();
     return false;
   }
   else {
@@ -159,7 +159,7 @@ function checkAccountStatus(jsonData) {
 }
 
 function searchStreamer() {
-  let streamerRequested = (document.getElementById('search').value).toLowerCase();
+  var streamerRequested = (document.getElementById('search').value).toLowerCase();
   // make sure user typed in searchable text
   if (streamerRequested.trim() !== "") {
     // set view to search
@@ -198,6 +198,6 @@ function showOfflineStreams() {
 
 // to debug time sensitive code
 function startTime() {
-  let debugTime= new Date().toLocaleString();
+  var debugTime= new Date().toLocaleString();
   console.log(debugTime);
 }
