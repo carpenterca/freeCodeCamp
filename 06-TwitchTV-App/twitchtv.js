@@ -1,5 +1,4 @@
-const streamers = ["freecodecamp", "funfunfunction", "day9tv", "kinenz", "boogie2988", "novawar", "lagtvmaximusblack", "technicalalpha", "disguisedtoasths", "trumpsc", "itmejp", "towelliee", "anniefuchsia"];
-let liveStreams = []; // if live add to array, if present in offlineStreams then remove from array
+const streamers = ["freecodecamp", "funfunfunction", "day9tv", "boogie2988", "novawar", "lagtvmaximusblack", "technicalalpha", "kinenz", "towelliee", "anniefuchsia", "trumpsc", "itmejp"];
 let offlineStreams = [];
 let callsCompleted = 0;
 let currentView = "home";
@@ -18,7 +17,7 @@ function initStreamHome() {
   // update streams every 5 minutes
   clearTimeout(t);
   t = setTimeout(function() {
-    startTime();
+    //startTime();
     if (currentView === "home") {
       initStreamHome();
     }
@@ -85,9 +84,9 @@ function getOfflineStreamers() {
 function displayLiveStreamers(jsonData, streamerName) {
   let timestamp = new Date().toLocaleString();
   $("div#online-streamers").append('<div class="streamer" id="' + streamerName + '"></div>');
-  $("#" + streamerName).append('<a class="stream-link-top" target="_blank" href="' + jsonData.stream['channel'].url + '"><div class="standard-view" id="standard-view-' + streamerName + '"></div></a>');
-  $("#standard-view-" + streamerName).append('<img class="user-img" src="' + jsonData.stream['channel'].logo + '"></img>');
-  $("#standard-view-" + streamerName).append('<div class="standard-view-text" id="standard-view-text-' + streamerName + '"></div>');
+  $("#" + streamerName).append('<div class="standard-view" id="standard-view-' + streamerName + '"></div></a>');
+  $("#standard-view-" + streamerName).append('<a class="stream-link-top" target="_blank" href="' + jsonData.stream['channel'].url + '"><img class="user-img" src="' + jsonData.stream['channel'].logo + '"></img></a>');
+  $("#standard-view-" + streamerName).append('<a class="stream-link-top" target="_blank" href="' + jsonData.stream['channel'].url + '"><div class="standard-view-text" id="standard-view-text-' + streamerName + '"></div></a>');
   $("#standard-view-text-" + streamerName).append('<h2 class="streamer-name" id="user-' + streamerName + '">' + jsonData.stream['channel'].display_name + '</h2>');
   $("#standard-view-text-" + streamerName).append('<p class="streamer-status" id="status-' + streamerName + '"><span class="fa fa-circle" aria-hidden="true"></span>' + "&nbsp;&nbsp;LIVE" + '</p>');
   $("#standard-view-" + streamerName).append('<div style="clear: both;"></div>');
@@ -108,12 +107,11 @@ function displayOfflineStreamers(jsonData, streamerName) {
   //console.log(jsonData);
   $("div#offline-streamers").append('<div class="streamer" id="' + streamerName + '"></div>');
   $("#" + streamerName).append('<div class="standard-view" id="standard-view-' + streamerName + '"></div>');
-  $("#standard-view-" + streamerName).append('<img class="user-img" src="' + jsonData.logo + '"></img>');
+  $("#standard-view-" + streamerName).append('<a class="stream-link-top" target="_blank" href="https://www.twitch.tv/' + streamerName + '"><img class="user-img" src="' + jsonData.logo + '"></img></a>');
   $("#standard-view-" + streamerName).append('<a class="stream-link-top" target="_blank" href="https://www.twitch.tv/' + streamerName + '"><div class="standard-view-text" id="standard-view-text-' + streamerName + '"></div></a>');
   $("#standard-view-text-" + streamerName).append('<h2 class="streamer-name" id="user-' + streamerName + '">' + jsonData.display_name + '</h2>');
   $("#standard-view-text-" + streamerName).append('<p class="streamer-status" id="status-' + streamerName + '">' + "Offline" + '</p>');
   $("#standard-view-" + streamerName).append('<div style="clear: both;"></div>');
-  //if (jsonData.bio !== null) {
   if (jsonData.bio !== null) {
     $("div#" + streamerName).append('<p class="stream-description" id="decscription-' + streamerName + '">' + jsonData.bio + '</p>');
     if (currentView === "search") {
@@ -172,24 +170,21 @@ function searchStreamer() {
 }
 
 function showAllStreams() {
-  $("#online-streamers").show();
-  $("#online-title").show();
-  $("#offline-streamers").show();
-  $("#offline-title").show();
+  $("#online-streamers").fadeIn("fast");
+  $("#offline-streamers").fadeIn("fast");
+  $("#offline-title").fadeIn("fast");
 }
 
 function showOnlineStreams() {
-  $("#online-streamers").show();
-  $("#online-title").show();
-  $("#offline-streamers").hide();
-  $("#offline-title").hide();
+  $("#online-streamers").fadeIn("fast");
+  $("#offline-streamers").fadeOut("fast");
+  $("#offline-title").fadeOut("fast");
 }
 
 function showOfflineStreams() {
-  $("#offline-streamers").show();
-  $("#offline-title").show();
-  $("#online-streamers").hide();
-  $("#online-title").hide();
+  $("#offline-streamers").fadeIn("fast");
+  $("#offline-title").fadeIn("fast");
+  $("#online-streamers").fadeOut("fast");
 }
 
 /*function trimStreamTitle(str) {

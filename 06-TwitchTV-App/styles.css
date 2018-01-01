@@ -15,6 +15,7 @@ html, body {
 }
 #search-form .fa:hover {
   text-shadow: 4px 6px 10px black;
+  color: #e1e1e1;
 }
 #streamers .fa {
   font-size: 0.850em;
@@ -58,30 +59,16 @@ html, body {
   text-shadow: 2px 3px 9px black;
   margin: 0 5px;
 }
-/*#random-search-btn {
-  font-size: 0.900em;
-  display: block;
-  text-decoration: none;
-  color: #faf9fa;
-  cursor: pointer;
-  text-shadow: 2px 3px 9px black;
-
-  border: 2px solid #faf9fa;
-  border-radius: 30px;
-  width: 45%;
-  margin: 0 auto;
-  margin-top: 8px;
-  padding: 2px;
-  box-shadow: 3px 2px 2px black;
-  background-color: #4b367c;
-}*/
+.filter-btn:hover {
+  color: #e1e1e1;
+  text-shadow: 4px 6px 10px black;
+}
 
 #page-title {
   text-align: center;
   font-size: 1.750em;
   margin: 5px auto;
   text-shadow: 2px 3px 9px black;
-  /*background-color: #402d6d;*/ /* 432f72 */
   padding-bottom: 5px;
 }
 #error-info {
@@ -93,6 +80,7 @@ html, body {
 }
 .btn:hover {
   cursor: pointer;
+  color: #e1e1e1;
 }
 
 #streamers {
@@ -110,7 +98,6 @@ html, body {
   background-color: #5e517f;
 }
 .standard-view {
-  /*background-color: #544776;*/
   border-bottom: 4px outset #8975bc;
   padding-bottom: 12px;
   border-radius: 8px;
@@ -220,7 +207,6 @@ p.stream-views {
     margin-left: 25px;
   }
   #offline-stremers, #online-streamers {
-    /*width: 80%;*/
     margin: 0 auto;
   }
   .streamer {
@@ -230,7 +216,6 @@ p.stream-views {
     max-height: 500px;
     max-width: 300px;
     margin: 10px 20px;
-    /*margin-bottom: 15px;*/
     position: relative;
   }
 
@@ -264,7 +249,6 @@ p.stream-views {
     display: inline-block;
     margin: 0;
     margin: 5px auto;
-    /*min-height: 130px;*/
   }
   .streamer-playing p {
     margin: 5px auto;
